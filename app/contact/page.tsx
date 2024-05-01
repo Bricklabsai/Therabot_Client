@@ -4,7 +4,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
+    <div className="max-w-[85rem] bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
       <div className="max-w-2xl lg:max-w-5xl mx-auto py-8">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-800 sm:text-4xl">
@@ -120,7 +120,7 @@ function page() {
               <div className="grow">
                 <h3 className="font-semibold text-gray-800 ">Knowledgebase</h3>
                 <p className="mt-1 text-sm text-gray-500">
-                  We're here to help with any questions or code.
+                  We're here to help with any questions.
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ function page() {
               </div>
             </div>
 
-            <div className=" flex gap-x-7 py-6">
+            {/* <div className=" flex gap-x-7 py-6">
               <svg
                 className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800"
                 xmlns="http://www.w3.org/2000/svg"
@@ -187,15 +187,15 @@ function page() {
                 <path d="M11 13h4" />
                 <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
               </svg>
-              <div className="grow">
+              {/* <div className="grow">
                 <a href="https://gtahidiapi.developer.azure-api.net">
                 <h3 className="font-semibold text-gray-800 ">Developer APIs</h3>
                 </a>
                 <p className="mt-1 text-sm text-gray-500">
                   Check out our development quickstart guide.
                 </p>
-              </div>
-            </div>
+              </div> 
+            </div> */}
 
             <div className=" flex gap-x-7 py-6">       
 
@@ -204,7 +204,7 @@ function page() {
                 <h3 className="font-semibold text-gray-800 ">Contact us by email</h3>
                 <p className="mt-1 text-sm text-gray-500">If you wish to write us an email instead please use</p>
                 <a className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 " href="#">
-                  Info@bric.com                </a>
+                  Info@bricklabsai.com </a>
 
             </div>
             </div>
