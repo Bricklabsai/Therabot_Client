@@ -28,7 +28,7 @@ export const Nav = () => {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
-            className="text-white  font-semibold bg-gray-400 hover:bg-gtahidiPurple rounded-lg text-sm px-4 py-2 text-center "
+            className="text-white font-semibold bg-primary-dark hover:bg-gtahidiPurple rounded-lg text-sm px-4 py-2 text-center "
           >
             <a href="/dashboard">Get started</a>
           </button>
