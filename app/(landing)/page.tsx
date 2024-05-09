@@ -28,11 +28,12 @@ const INTERESTS: Interest[] = [
 function page() {
   return (
     <>
-      <section className="bg-white py-10 min-h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
+      <section className="bg-white border border-red-600 py-10 min-h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
         <div className="py-8 px-4 mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
+  
           <a
             href="#"
-            className="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-violet-700 bg-violet-100 rounded-full dark:bg-violet-900 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-800"
+            className="inline-flex mt-4 sm:mt-0 justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-violet-700 bg-violet-100 rounded-full dark:bg-violet-900 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-800"
           >
             <span className="text-xs bg-secondary-dark rounded-full text-white px-4 py-1.5 me-3">
               New
