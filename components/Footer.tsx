@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React from "react";
@@ -6,64 +7,72 @@ import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-white py-8 dark:bg-gray-900 text-black">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
+        <div className="grid grid-cols-12 gap-8">
+          <div className="mb-6 col-span-12 md:col-span-4 md:mb-0">
             <a href="#" className="flex items-center">
               <Image
                 src={logo}
-                className="h-9 me-3"
+                className="h-12 w-12 me-3"
                 alt="Gtahidi Logo"
                 width={35}
                 height={35}
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">
                 Therabot
               </span>
             </a>
+            <div className="p-2">
+              <p className="leadin-4">
+                We are a psychotherapy practice dedicated to providing
+                compassionate and effective mental health care to individuals,
+                couples, and families.
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Features
-              </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-0">
-                  <a href="/" className="hover:underline">
-                    DeveIopers
-                  </a>
-                </li>
-                <li>
-                  <a href="/" className="hover:underline">
-                    Doctors
-                  </a>
-                </li>
-                <li>
-                  <a href="/" className="hover:underline">
-                    Students
-                  </a>
-                </li>
-              </ul>
-            </div>
 
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Legal
-              </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a href="/TermsConditions" className="hover:underline">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="/TermsConditions" className="hover:underline">
-                    Terms &amp; Conditions
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div className="col-span-12 md:col-span-4 p-2">
+            <h2 className="text-lg font-semibold text-gray-900 uppercase dark:text-white">
+              Features
+            </h2>
+            <br />
+            <ul className="text-gray-500 dark:text-gray-400 flex flex-col gap-3 font-medium">
+              <li className="">
+                <a href="/" className="hover:underline">
+                  DeveIopers
+                </a>
+              </li>
+              <li>
+                <a href="/" className="hover:underline">
+                  Doctors
+                </a>
+              </li>
+              <li>
+                <a href="/" className="hover:underline">
+                  Students
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-span-12 md:col-span-4">
+            <h2 className="text-lg font-semibold text-gray-900 uppercase dark:text-white">
+              Legal
+            </h2>
+            <br />
+            <ul className="text-gray-500 dark:text-gray-400 font-medium flex flex-col gap-3">
+              <li className="">
+                <a href="/TermsConditions" className="hover:underline">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/TermsConditions" className="hover:underline">
+                  Terms &amp; Conditions
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
