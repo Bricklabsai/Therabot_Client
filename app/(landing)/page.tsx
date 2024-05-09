@@ -32,7 +32,7 @@ function page() {
         <div className="py-8 px-4 mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
   
           <a
-            href="#"
+            href="https://shorturl.at/aFY78"
             className="inline-flex mt-4 sm:mt-0 justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-violet-700 bg-violet-100 rounded-full dark:bg-violet-900 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-800"
           >
             <span className="text-xs bg-secondary-dark rounded-full text-white px-4 py-1.5 me-3">
