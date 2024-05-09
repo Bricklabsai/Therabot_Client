@@ -149,10 +149,15 @@ function page() {
       <section className="py-6 bg-primary-light text-black min-h-screen">
         <div className="py-8 px-3 mx-8 max-w-screen-xl text-center lg:py-16 z-10 relative">
           <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-12 md:col-span-6 lg:col-span-8">
-              <img loading="lazy" className="object-contain rounded-md" src="/sitting.jpeg" alt="people sitting" />
+            <div className="col-span-12 h-full  lg:col-span-8">
+              <img
+                loading="lazy"
+                className="object-cover h-full w-full rounded-md"
+                src="/sitting.jpeg"
+                alt="people sitting"
+              />
             </div>
-            <div className=" border col-span-12 md:col-span-6 lg:col-span-4 p-8 bg-white rounded-2xl md:rounded-tl-none rounded-bl-none">
+            <div className=" border col-span-12  lg:col-span-4 p-8 bg-white rounded-2xl lg:rounded-tl-none lg:rounded-bl-none">
               <h2 className="text-3xl text-left space-x-2">How it works</h2>
               <br />
               <div className="flex flex-col gap-5">
@@ -195,44 +200,60 @@ function page() {
           </div>
         </div>
       </section>
-      <section className="py-6 bg-white text-black min-h-screen">
-        <div className="py-8 px-4 mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
+      <section className="py-6 bg-white text-black">
+        <div className="py-8 px-4 lg:mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
           <div className="px-10 mx-auto">
-            <h2 className="text-4xl uppercase">
+            <h2 className="text-4xl uppercase tracking-wider">
               OUR SERVICES FOR BUILDING HEALTHY RELATIONSHIPS
             </h2>
             <br />
+            <br />
           </div>
-          <div className="flex flex-row gap-6">
-            <div className="flex flex-row gap-12 h-92 border border-red-500">
-              <div>
-                <img src="/readin.png" alt="" />
+          <div className="md:mx-10">
+            <div className="grid grid-cols-12 justify-items-center gap-6">
+              <div className="hidden md:block md:col-span-6 gap-12 h-full">
+                <img className="object-cover h-full" src="/readin.png" alt="" />
               </div>
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-row justify-between">
-                <h2 className="text-3xl uppercase font-medium">
-                  individual therapy
-                </h2>
+
+              <div className="col-span-2 hidden sm:block md:hidden"></div>
+              <div className="flex justify-self-center col-span-12 sm:col-span-8 md:col-span-6 gap-4 justify-end items-end">
+                <div className=" bg-primary-light h-4/5 rounded-full w-10"></div>
+                <a href="#" className="group flex flex-col h-full p-2 justify-center gap-3">
+                  <div className="flex flex-row items-center gap-5">
+                    <p className="text-4xl lg:text-5xl uppercase w-2/3 text-left tracking-wide group-hover:text-primary-dark">
+                      individual therapy
+                    </p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-10 w-10 group-hover:text-primary-dark"
+                    >
+                      <path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path>
+                    </svg>
+                  </div>
+                  <br />
+                  <p className="text-left">
+                    Individual therapy, also called psychotherapy, is a type of
+                    treatment that involves meeting with a therapist one-on-one
+                    to discuss emotional and mental health issues. The goal of
+                    individual therapy is to help an individual understand and
+                    manage their emotions, behaviors, and thoughts better.
+                  </p>
+                </a>
               </div>
-              <br />
-              <p>
-                Individual therapy, also called psychotherapy, is a type of
-                treatment that involves meeting with a therapist one-on-one to
-                discuss emotional and mental health issues. The goal of
-                individual therapy is to help an individual understand and
-                manage their emotions, behaviors, and thoughts better.
-              </p>
+              <div className="col-span-2 hidden sm:block md:hidden"></div>
             </div>
           </div>
         </div>
       </section>
 
+
       <section
-        className="py-6 bg-white text-black min-h-screen"
-        style={{ backgroundImage: "/about.png" }}
+        className="bg-white text-black flex items-end min-h-screen"
+        style={{ backgroundImage: "url('/about.png')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
       >
-        <div className="h-4/5 mt-auto border md:w-1/2 bg-primary-light">
+        <div className="h-4/5 py-12 pl-12 pr-20 md:w-1/2 rounded-tr-[200px] bg-gradient-to-r from-primary-light to-neutral-200">
           <h2 className="font-medium text-2xl uppercase">ABOUT US</h2>
           <br />
           <p>
@@ -255,16 +276,16 @@ function page() {
           </p>
           <br />
           <Button className="shadow-md shadow-gray-400 flex gap-4 bg-primary-dark hover:bg-purple-500">
-                <p className="uppercase font-medium">Explore more</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-                </svg>
-              </Button>
+            <p className="uppercase font-medium">Explore more</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-5 h-5"
+            >
+              <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+            </svg>
+          </Button>
         </div>
       </section>
     </>
