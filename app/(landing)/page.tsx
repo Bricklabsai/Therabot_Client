@@ -106,21 +106,21 @@ function page() {
         </div>
       </section>
       <section className="py-6 bg-white text-black">
-        <div className="py-8 px-4 mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
-          <div className="px-10 sm:w-4/5 mx-auto">
-          <h2 className="text-4xl">CHOOSE WHAT INTEREST YOU</h2>
-          <br />
-          <p className="">
-            Psychotherapy is a form of therapeutic treatment that focuses on
-            improving mental health conditions through counseling and talk
-            therapy. The goal of psychotherapy is to help individuals confront
-            and overcome their emotional or psychological issues, such as
-            anxiety, depression, trauma, and addiction.
-          </p>
+        <div className="py-8 px-4 sm:mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
+          <div className="px-2 sm:px-10 w-full sm:w-4/5 mx-auto">
+            <h2 className="text-4xl text-center">CHOOSE WHAT INTEREST YOU</h2>
+            <br />
+            <p className="">
+              Psychotherapy is a form of therapeutic treatment that focuses on
+              improving mental health conditions through counseling and talk
+              therapy. The goal of psychotherapy is to help individuals confront
+              and overcome their emotional or psychological issues, such as
+              anxiety, depression, trauma, and addiction.
+            </p>
           </div>
           <br />
           <br />
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {INTERESTS.map((interest: Interest) => (
               <a key={interest.label} className="flex group flex-col gap-3">
                 <img
@@ -129,7 +129,9 @@ function page() {
                   alt={interest.alt}
                 />
                 <div className="flex gap-6 px-2 items-center">
-                  <p className="text-lg font-medium group-hover:underline underline-offset-4">{interest.label}</p>
+                  <p className="text-lg font-medium group-hover:underline underline-offset-4">
+                    {interest.label}
+                  </p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -142,6 +144,127 @@ function page() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="py-6 bg-primary-light text-black min-h-screen">
+        <div className="py-8 px-3 mx-8 max-w-screen-xl text-center lg:py-16 z-10 relative">
+          <div className="grid grid-cols-12 gap-6">
+            <div className="col-span-12 md:col-span-6 lg:col-span-8">
+              <img loading="lazy" className="object-contain rounded-md" src="/sitting.jpeg" alt="people sitting" />
+            </div>
+            <div className=" border col-span-12 md:col-span-6 lg:col-span-4 p-8 bg-white rounded-2xl md:rounded-tl-none rounded-bl-none">
+              <h2 className="text-3xl text-left space-x-2">How it works</h2>
+              <br />
+              <div className="flex flex-col gap-5">
+                <div className="flex gap-5 items-start">
+                  <img src="/therapy1.png" className="object-contain" alt="" />
+                  <p className="text-left text-sm leading-6">
+                    Psychotherapy is a type of treatment that helps individuals
+                    understand and overcome their psychological problems.
+                  </p>
+                </div>
+                <div className="flex gap-5">
+                  <img src="/therapy2.png" className="object-contain" alt="" />
+                  <p className="text-left text-sm leading-6">
+                    The therapy typically involves several steps that are
+                    necessary to achieve a positive outcome.
+                  </p>
+                </div>
+                <div className="flex gap-5">
+                  <img src="/therapy3.png" className="object-contain" alt="" />
+                  <p className="text-left text-sm leading-6">
+                    By working through the therapy steps, patients can
+                    experience significant improvements in their mental health
+                    and quality of life.
+                  </p>
+                </div>
+              </div>
+              <br />
+              <Button className="shadow-md shadow-gray-400 text-white px-8 items-center flex gap-4 bg-primary-dark hover:bg-purple-500">
+                <p className="uppercase font-medium">Sign up</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-6 bg-white text-black min-h-screen">
+        <div className="py-8 px-4 mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
+          <div className="px-10 mx-auto">
+            <h2 className="text-4xl uppercase">
+              OUR SERVICES FOR BUILDING HEALTHY RELATIONSHIPS
+            </h2>
+            <br />
+          </div>
+          <div className="flex flex-row gap-6">
+            <div className="flex flex-row gap-12 h-92 border border-red-500">
+              <div>
+                <img src="/readin.png" alt="" />
+              </div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-row justify-between">
+                <h2 className="text-3xl uppercase font-medium">
+                  individual therapy
+                </h2>
+              </div>
+              <br />
+              <p>
+                Individual therapy, also called psychotherapy, is a type of
+                treatment that involves meeting with a therapist one-on-one to
+                discuss emotional and mental health issues. The goal of
+                individual therapy is to help an individual understand and
+                manage their emotions, behaviors, and thoughts better.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="py-6 bg-white text-black min-h-screen"
+        style={{ backgroundImage: "/about.png" }}
+      >
+        <div className="h-4/5 mt-auto border md:w-1/2 bg-primary-light">
+          <h2 className="font-medium text-2xl uppercase">ABOUT US</h2>
+          <br />
+          <p>
+            Our psychotherapy practice is committed to providing a safe and
+            compassionate space for individuals to explore their thoughts,
+            feelings, and behaviors.
+          </p>
+          <br />
+          <p>
+            Our team of licensed therapists brings a variety of therapeutic
+            approaches to address a wide range of mental health concerns,
+            including anxiety, depression, trauma, and relationship issues.
+          </p>
+          <br />
+          <p>
+            We prioritize collaboration with our clients to identify their
+            unique needs and tailor treatment accordingly. We believe in a
+            strengths-based approach that empowers clients to build resiliency
+            and achieve their goals.
+          </p>
+          <br />
+          <Button className="shadow-md shadow-gray-400 flex gap-4 bg-primary-dark hover:bg-purple-500">
+                <p className="uppercase font-medium">Explore more</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+              </Button>
         </div>
       </section>
     </>
