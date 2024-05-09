@@ -250,10 +250,10 @@ function page() {
 
 
       <section
-        className="bg-white text-black flex items-end min-h-screen"
-        style={{ backgroundImage: "url('/about.png')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
+        className="bg-white text-black flex items-end  min-h-screen bg-[url('/about.png')]"
+        style={{backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
       >
-        <div className="h-4/5 py-12 pl-12 pr-20 md:w-1/2 rounded-tr-[200px] bg-gradient-to-r from-primary-light to-neutral-200">
+        <div className="h-4/5 py-12 pl-12 pr-20 sm:w-[75%] md:w-1/2 sm:rounded-tr-[200px] bg-gradient-to-r from-primary-light  to-primary-lighter">
           <h2 className="font-medium text-2xl uppercase">ABOUT US</h2>
           <br />
           <p>
@@ -275,7 +275,7 @@ function page() {
             and achieve their goals.
           </p>
           <br />
-          <Button className="shadow-md shadow-gray-400 flex gap-4 bg-primary-dark hover:bg-purple-500">
+          <Button className="shadow-md text-white shadow-gray-400 flex gap-4 bg-primary-dark hover:bg-purple-500">
             <p className="uppercase font-medium">Explore more</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
