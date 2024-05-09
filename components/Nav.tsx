@@ -1,10 +1,9 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Image from "next/image";
 import logo from "@/public/assets/therabot_removed.png";
 
 export const Nav = () => {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -29,11 +28,9 @@ export const Nav = () => {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
-            className="text-white  font-semibold bg-gray-400 hover:bg-gtahidiPurple rounded-lg text-sm px-4 py-2 text-center "
+            className="text-white font-semibold bg-primary-dark hover:bg-gtahidiPurple rounded-lg text-sm px-4 py-2 text-center "
           >
-            <a href="/dashboard"  >
-            Get started
-            </a>
+            <a href="/dashboard">Get started</a>
           </button>
           <button
             onClick={toggleMenu}
@@ -53,9 +50,9 @@ export const Nav = () => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>
@@ -63,7 +60,7 @@ export const Nav = () => {
         </div>
         <div
           className={`transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? 'flex' : 'hidden'
+            isMenuOpen ? "flex" : "hidden"
           } items-center justify-between w-full md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
@@ -78,7 +75,6 @@ export const Nav = () => {
               </a>
             </li>
 
-            
             <li>
               <a
                 href="/pricing"
