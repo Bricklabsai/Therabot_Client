@@ -28,9 +28,14 @@ const INTERESTS: Interest[] = [
 function page() {
   return (
     <>
-      <section className="bg-white border border-red-600 py-10 min-h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
+      <section className="bg-white relative py-10 min-h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
+        <div className="absolute top-0 bottom-[20%] overflow-hidden hidden md:block rounded-bl-[350px] z-[10] right-0">
+          <img src="/landing.png" className="object-cover h-full" alt="" />
+        </div>
         <div className="py-8 px-4 mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
-  
+          <div className="md:hidden">
+            <br></br>
+          </div>
           <a
             href="https://shorturl.at/aFY78"
             className="inline-flex mt-4 sm:mt-0 justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-violet-700 bg-violet-100 rounded-full dark:bg-violet-900 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-800"
@@ -59,7 +64,7 @@ function page() {
             </svg>
           </a>
           <br />
-          <div className="min-[250px] max-w-[500px] w-full">
+          <div className="min-[250px] z-[50] max-w-[500px] w-full">
             <h1 className="mb-4 text-3xl sm:text-left font-extrabold tracking-tight leading-none text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
               A heathier choice for a healthier you
             </h1>
@@ -210,7 +215,7 @@ function page() {
             <br />
             <br />
           </div>
-          <div className="md:mx-10">
+          <div className="md:mx-10 grid grid-rows-3 gap-12">
             <div className="grid grid-cols-12 justify-items-center gap-6">
               <div className="hidden md:block md:col-span-6 gap-12 h-full">
                 <img className="object-cover h-full" src="/readin.png" alt="" />
@@ -219,7 +224,10 @@ function page() {
               <div className="col-span-2 hidden sm:block md:hidden"></div>
               <div className="flex justify-self-center col-span-12 sm:col-span-8 md:col-span-6 gap-4 justify-end items-end">
                 <div className=" bg-primary-light h-4/5 rounded-full w-10"></div>
-                <a href="#" className="group flex flex-col h-full p-2 justify-center gap-3">
+                <a
+                  href="#"
+                  className="group flex flex-col h-full p-2 justify-center gap-3"
+                >
                   <div className="flex flex-row items-center gap-5">
                     <p className="text-4xl lg:text-5xl uppercase w-2/3 text-left tracking-wide group-hover:text-primary-dark">
                       individual therapy
@@ -245,14 +253,99 @@ function page() {
               </div>
               <div className="col-span-2 hidden sm:block md:hidden"></div>
             </div>
+            <div className="grid grid-cols-12 justify-items-center gap-6">
+              <div className="hidden md:block md:col-span-6 gap-12 h-full">
+                <img
+                  className="object-cover h-full"
+                  src="/couples_therapy.png"
+                  alt=""
+                />
+              </div>
+
+              <div className="col-span-2 hidden sm:block md:hidden"></div>
+              <div className="flex justify-self-center col-span-12 sm:col-span-8 md:col-span-6 gap-4 justify-end items-end">
+                <div className=" bg-primary-light h-4/5 rounded-full w-10"></div>
+                <a
+                  href="#"
+                  className="group flex flex-col h-full p-2 justify-center gap-3"
+                >
+                  <div className="flex flex-row items-center gap-5">
+                    <p className="text-4xl lg:text-5xl uppercase w-2/3 text-left tracking-wide group-hover:text-primary-dark">
+                      couples therapy
+                    </p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-10 w-10 group-hover:text-primary-dark"
+                    >
+                      <path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path>
+                    </svg>
+                  </div>
+                  <br />
+                  <p className="text-left">
+                    Couples therapy, also known as couples counseling or couples
+                    psychotherapy, is a form of talk therapy designed to help
+                    couples address and resolve relationship issues. This type
+                    of therapy typically involves both partners working with a
+                    trained therapist or counselor to explore problems, enhance
+                    communication, and create a stronger relationship.
+                  </p>
+                </a>
+              </div>
+              <div className="col-span-2 hidden sm:block md:hidden"></div>
+            </div>
+
+            <div className="grid grid-cols-12 justify-items-center gap-6">
+              <div className="hidden md:block md:col-span-6 gap-12 h-full">
+                <img
+                  className="object-cover h-full"
+                  src="/group_therapy.png"
+                  alt=""
+                />
+              </div>
+
+              <div className="col-span-2 hidden sm:block md:hidden"></div>
+              <div className="flex justify-self-center col-span-12 sm:col-span-8 md:col-span-6 gap-4 justify-end items-end">
+                <div className=" bg-primary-light h-4/5 rounded-full w-10"></div>
+                <a
+                  href="#"
+                  className="group flex flex-col h-full p-2 justify-center gap-3"
+                >
+                  <div className="flex flex-row items-center gap-5">
+                    <p className="text-4xl lg:text-5xl uppercase w-2/3 text-left tracking-wide group-hover:text-primary-dark">
+                      group therapy
+                    </p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-10 w-10 group-hover:text-primary-dark"
+                    >
+                      <path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path>
+                    </svg>
+                  </div>
+                  <br />
+                  <p className="text-left">
+                    Group therapy is a type of psychotherapy that involves a
+                    small group of individuals meeting together with a trained
+                    therapist to discuss and work through emotional or
+                    psychological issues. It is a cost-effective and practical
+                    option for those seeking help, as it allows individuals to
+                    connect with others who share similar struggles and gain
+                    support and validation from their peers.
+                  </p>
+                </a>
+              </div>
+              <div className="col-span-2 hidden sm:block md:hidden"></div>
+            </div>
           </div>
         </div>
       </section>
 
-
       <section
         className="bg-white text-black flex items-end  min-h-screen bg-[url('/about.png')]"
-        style={{backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
+        style={{ backgroundRepeat: "no-repeat", backgroundSize: "cover" }}
       >
         <div className="h-4/5 py-12 pl-12 pr-20 sm:w-[75%] md:w-1/2 sm:rounded-tr-[200px] bg-gradient-to-r from-primary-light  to-primary-lighter">
           <h2 className="font-medium text-2xl uppercase">ABOUT US</h2>
