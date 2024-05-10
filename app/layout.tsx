@@ -4,17 +4,19 @@ import { Nav } from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import { BASE_URL } from "@/global.config";
+import Providers from "@/components/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
- 
+
   title: {
     default: "Therabot: Your Personal AI Therapist",
     template: "%s | Therabot",
   },
-  keywords: "AI therapist, therapy bot, mental health support, online counseling, virtual therapy, emotional well-being, cognitive behavioral therapy, personalized therapy sessions",
+  keywords:
+    "AI therapist, therapy bot, mental health support, online counseling, virtual therapy, emotional well-being, cognitive behavioral therapy, personalized therapy sessions",
   description:
     "Experience personalized therapy sessions with Therabot, an advanced AI therapist designed to provide support and guidance whenever you need it.",
   openGraph: {
@@ -57,9 +59,11 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className={inter.className}>
-        <Nav />
-        {children}
-        <Footer />
+        <Providers>
+          <Nav />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
