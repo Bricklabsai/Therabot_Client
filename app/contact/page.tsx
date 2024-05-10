@@ -1,6 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Metadata } from "next";
 
-import React from "react";
+export const metadata: Metadata = {
+  title: "Contact Us - Therabot",
+  openGraph: {
+    title: "Contact Us - Therabot",
+  },
+  twitter: {
+    title: "Contact Us - Therabot"
+  }
+}
 
 function page() {
   return (

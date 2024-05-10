@@ -1,6 +1,14 @@
-// pages/terms.js
+import { Metadata } from "next";
 
-import Head from 'next/head';
+export const metadata: Metadata = {
+  title: "Terms and Conditions - Therabot",
+  openGraph: {
+    title: "Terms and Conditions - Therabot",
+  },
+  twitter: {
+    title: "Terms and Conditions - Therabot"
+  }
+}
 
 export default function Terms() {
   return (

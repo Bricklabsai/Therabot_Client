@@ -1,5 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog - Therabot",
+  openGraph: {
+    title: "Blog - Therabot",
+  },
+  twitter: {
+    title: "Blog - Therabot"
+  }
+}
 
 function page() {
   return (

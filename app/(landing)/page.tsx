@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Button from "@/components/button";
+import { Metadata } from "next";
 
 interface Interest {
   src: string;
@@ -24,6 +25,12 @@ const INTERESTS: Interest[] = [
     label: "Environment",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Therabot: Your Personal AI Therapist",
+  description:
+    "Experience personalized therapy sessions with Therabot, an advanced AI therapist designed to provide support and guidance whenever you need it.",
+};
 
 function page() {
   return (
