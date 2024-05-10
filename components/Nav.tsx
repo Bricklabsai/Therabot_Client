@@ -88,7 +88,7 @@ export const Nav = () => {
                 href="/blogs"
                 className="block py-2 px-3 text-gtahidiDarkBlue rounded hover:bg-gtahidiPink "
               >
-                Blogs
+                Blog
               </a>
             </li>
             <li>

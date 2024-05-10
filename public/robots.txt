@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://trytherabot.com
+
+# Sitemaps
+Sitemap: https://trytherabot.com/sitemap.xml
