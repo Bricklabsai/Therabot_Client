@@ -1,18 +1,30 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "@/public/assets/therabot_removed.png";
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activated, setActivated] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 20) {
+        setActivated(true)
+      }
+      else {
+        setActivated(false)
+      }
+    })
+  }, [])
+
   return (
-    <nav className="bg-white text-gray-900  fixed w-full z-20 top-0 start-0 border-b border-gray-200 ">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className={`${activated ? 'bg-white border-gray-200' : 'bg-transparent border-transparent'} border-b transition-colors ease-in duration-200 text-gray-900  fixed w-full z-20 top-0 start-0 `}>
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image
             src={logo}
@@ -28,7 +40,7 @@ export const Nav = () => {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
-            className="text-white font-semibold bg-primary-dark hover:bg-gtahidiPurple rounded-lg text-sm px-4 py-2 text-center "
+            className="text-white font-semibold bg-primary-dark hover:bg-primary-darker hover:bg-gtahidiPurple rounded-lg text-sm px-4 py-3 text-center "
           >
             <a href="/dashboard">Get started</a>
           </button>
@@ -61,14 +73,14 @@ export const Nav = () => {
         <div
           className={`transition-transform duration-300 ease-in-out ${
             isMenuOpen ? "flex" : "hidden"
-          } items-center justify-between w-full md:flex md:w-auto md:order-1`}
+          } items-center justify-end py-2 w-full md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium gap-5 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+          <ul className="flex flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
             <li>
               <a
                 href="/"
-                className="block py-2 px-3 text-gtahidiDarkBlue bg-gt rounded hover:bg-gtahidiPink"
+                className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
                 aria-current="page"
               >
                 Home
@@ -78,7 +90,7 @@ export const Nav = () => {
             <li>
               <a
                 href="/pricing"
-                className="block py-2 px-3 text-gtahidiDarkBlue rounded hover:bg-gtahidiPink "
+                className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
               >
                 Pricing
               </a>
@@ -86,7 +98,7 @@ export const Nav = () => {
             <li>
               <a
                 href="/blogs"
-                className="block py-2 px-3 text-gtahidiDarkBlue rounded hover:bg-gtahidiPink "
+                className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
               >
                 Blog
               </a>
@@ -94,7 +106,7 @@ export const Nav = () => {
             <li>
               <a
                 href="/contact"
-                className="block py-2 px-3 text-gtahidiDarkBlue rounded hover:bg-gtahidiPink  "
+                className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
               >
                 Contact
               </a>
