@@ -9,12 +9,19 @@ export default function Interests() {
   const control1 = useAnimation();
   const control2 = useAnimation();
   const control3 = useAnimation();
+  const control4 = useAnimation();
+  const control5 = useAnimation();
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const ref5 = useRef(null);
   const inView1 = useInView(ref1);
   const inView2 = useInView(ref2);
   const inView3 = useInView(ref3);
+  const inView4 = useInView(ref4);
+  const inView5 = useInView(ref5);
+  const interestRefs = [ref3, ref4, ref5]
   useEffect(() => {
     if (inView1) {
       control1.start("animate");
@@ -25,7 +32,13 @@ export default function Interests() {
     if (inView3) {
       control3.start("animate");
     }
-  }, [control1,control2, control3, inView1, inView2, inView3]);
+    if (inView4) {
+      control4.start("animate");
+    }
+    if (inView5) {
+      control5.start("animate");
+    }
+  }, [control1,control2, control3, control4, control5, inView1, inView2, inView3, inView4, inView5]);
 
   return (
     <div>
@@ -37,7 +50,7 @@ export default function Interests() {
               animate={control1}
               ref={ref1}
               initial="initial"
-              className="text-4xl font-medium text-center"
+              className="text-4xl font-medium text-center duration-[800ms]"
             >
               CHOOSE WHAT INTEREST YOU
             </motion.h2>
@@ -47,7 +60,7 @@ export default function Interests() {
               animate={control2}
               ref={ref2}
               initial="initial"
-              className=""
+              className="duration-[800ms]"
             >
               Psychotherapy is a form of therapeutic treatment that focuses on
               improving mental health conditions through counseling and talk
@@ -59,14 +72,14 @@ export default function Interests() {
           <br />
           <br />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {INTERESTS.map((interest: Interest) => (
+            {INTERESTS.map((interest: Interest, index: number) => (
               <motion.a
                 variants={popOut}
                 animate={control3}
-                ref={ref3}
+                ref={interestRefs[index]}
                 initial="initial"
                 key={interest.label}
-                className="flex group flex-col gap-3"
+                className="flex group flex-col gap-3 duration-500"
               >
                 <img
                   className="rounded-2xl"

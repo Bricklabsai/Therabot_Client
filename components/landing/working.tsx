@@ -8,21 +8,25 @@ import { slideFromLeft, slideFromRight } from '@/utils/animations';
 
 
 export default function Working() {
-    const controls = useAnimation();
+    const control1 = useAnimation();
+    const control2 = useAnimation();
     const ref1 = useRef(null);
     const ref2 = useRef(null);
     const inView1 = useInView(ref1);
     const inView2 = useInView(ref2);
     useEffect(() => {
       if (inView1) {
-        controls.start("animate");
+        control1.start("animate");
       }
-    }, [controls, inView1, inView2]);
+      if (inView2) {
+        control2.start("animate");
+      }
+    }, [control1, control2, inView1, inView2]);
   return (
     <section className="py-6 bg-primary-light text-black min-h-screen">
     <div className="py-8 px-3 mx-3 sm:mx-8 max-w-screen-xl text-center lg:py-16 z-10 relative">
       <div className="grid grid-cols-12 gap-6">
-        <motion.div variants={slideFromLeft} animate={controls} ref={ref1} initial="initial" className="hidden sm:block col-span-12 h-full lg:col-span-8">
+        <motion.div variants={slideFromLeft} animate={control1} ref={ref1} initial="initial" className="hidden sm:block duration-[600ms] col-span-12 h-full lg:col-span-8">
           <img
             loading="lazy"
             className="object-cover h-full w-full rounded-md"
@@ -30,7 +34,7 @@ export default function Working() {
             alt="people sitting"
           />
         </motion.div>
-        <motion.div variants={slideFromRight} animate={controls} ref={ref2} initial="initial" className=" border col-span-12  lg:col-span-4 p-8 bg-white rounded-2xl lg:rounded-tl-none lg:rounded-bl-none">
+        <motion.div variants={slideFromRight} animate={control2} ref={ref2} initial="initial" className=" border col-span-12 duration-[600ms] lg:col-span-4 p-8 bg-white rounded-2xl lg:rounded-tl-none lg:rounded-bl-none">
           <h2 className="text-3xl text-left space-x-2">How it works</h2>
           <br />
           <div className="flex flex-col gap-5">

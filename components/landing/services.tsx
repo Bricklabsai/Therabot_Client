@@ -4,7 +4,7 @@ import React from "react";
 import { SERVICES, Service } from "@/constants/services";
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { riseWithFade, slideFromLeft, slideFromRight } from '@/utils/animations';
+import { riseWithFade, slideFromRight } from '@/utils/animations';
 
 export default function Services() {
     const control1 = useAnimation();
@@ -39,7 +39,7 @@ export default function Services() {
     <section className="py-6 bg-white text-black">
       <div className="py-8 px-4 lg:mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
         <div className="mx-auto">
-          <motion.h2 variants={slideFromRight} animate={control1} ref={ref1} initial="initial" className="text-3xl max-sm:font-medium sm:text-4xl uppercase tracking-wider">
+          <motion.h2 variants={slideFromRight} animate={control1} ref={ref1} initial="initial" className="text-3xl duration-[600ms] max-sm:font-medium sm:text-4xl uppercase tracking-wider">
             OUR SERVICES FOR BUILDING HEALTHY RELATIONSHIPS
           </motion.h2>
         </div>
@@ -50,7 +50,7 @@ export default function Services() {
             <motion.div
             variants={riseWithFade} animate={CONTROLS[index]} ref={REFS[index]} initial="initial"
               key={service.title}
-              className="grid grid-cols-12 justify-items-center gap-6"
+              className="grid grid-cols-12 justify-items-center gap-6 duration-[600ms]"
             >
               <div className="hidden md:block md:col-span-6 gap-12 h-full">
                 <img
