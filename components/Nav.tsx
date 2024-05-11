@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import logo from "@/public/assets/therabot_removed.png";
+import logo from "@/public/therabot.svg";
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,8 +23,8 @@ export const Nav = () => {
   }, [])
 
   return (
-    <nav className={`${activated ? 'bg-white border-gray-200' : 'bg-transparent border-transparent'} border-b transition-colors ease-in duration-200 text-gray-900  fixed w-full z-20 top-0 start-0 `}>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <nav className={`${activated ? 'bg-white border-gray-200' : 'bg-transparent border-transparent'} border-b w-full transition-colors ease-in duration-200 text-gray-900  fixed z-20 top-0 start-0 `}>
+      <div className="flex flex-wrap items-center justify-between mx-auto px-4 max-w-[100vw]  py-2">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image
             src={logo}

@@ -16,7 +16,7 @@ export default function Banner() {
     }, [controls, inView])
 
   return (
-    <motion.section variants={riseWithFade} animate={controls} ref={ref} initial="initial">
+    <motion.section className="duration-[600ms]" variants={riseWithFade} animate={controls} ref={ref} initial="initial">
       <div className="flex justify-center items-center h-20 bg-white text-black border">
         <div className="text-center flex flex-row items-center space-x-2">
           <p className="text-xl font-semibold">Backed by</p>

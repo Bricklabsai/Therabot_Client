@@ -24,7 +24,7 @@ export default function About() {
         animate={controls}
         ref={ref}
         initial="initial"
-        className="h-4/5 py-12 px-8 sm:pl-12 sm:pr-20 sm:w-[75%] md:w-1/2 sm:rounded-tr-[200px] bg-gradient-to-r from-primary-light  to-primary-lighter"
+        className="h-4/5 duration-[600ms] py-12 px-8 sm:pl-12 sm:pr-20 sm:w-[75%] md:w-1/2 sm:rounded-tr-[200px] bg-gradient-to-r from-primary-light  to-primary-lighter"
       >
         <h2 className="font-medium text-2xl uppercase">ABOUT US</h2>
         <br />

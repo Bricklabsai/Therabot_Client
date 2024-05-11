@@ -1,3 +1,19 @@
+export const fallWithFade = {
+    initial: {
+        y: -50,
+        opacity: 0
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            type: "smooth",
+            // ease: [0.6, 0.01, 0.05, 0.95],
+            duration: 0,
+        },
+    },
+}
+
 export const riseWithFade = {
     initial: {
         y: 50,
@@ -9,10 +25,11 @@ export const riseWithFade = {
         transition: {
             type: "smooth",
             // ease: [0.6, 0.01, 0.05, 0.95],
-            duration: 0.6,
+            duration: 0,
         },
     },
 }
+
 
 export const fadeFromLeft = {
     initial: {
@@ -25,7 +42,7 @@ export const fadeFromLeft = {
         transition: {
             type: "smooth",
             // ease: [0.6, 0.01, 0.05, 0.95],
-            duration: 0.8,
+            duration: 0,
         },
     }
 }
@@ -42,7 +59,7 @@ export const fadeFromRight = {
         transition: {
             type: "smooth",
             // ease: [0.6, 0.01, 0.05, 0.95],
-            duration: 0.8,
+            duration: 0,
         },
     }
 }
@@ -59,7 +76,7 @@ export const slideFromLeft = {
         transition: {
             type: "smooth",
             // ease: [0.6, 0.01, 0.05, 0.95],
-            duration: 0.6,
+            duration: 0,
         },
     }
 }
@@ -77,7 +94,7 @@ export const slideFromRight = {
         transition: {
             type: "smooth",
             // ease: [0.6, 0.01, 0.05, 0.95],
-            duration: 0.6,
+            duration: 0,
         },
     }
 }
@@ -92,7 +109,7 @@ export const popOut = {
         scale: 1,
         transition: {
             type: "smooth",
-            duration: 0.5
+            duration: 0
         }
     }
 }

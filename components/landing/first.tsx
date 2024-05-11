@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { riseWithFade } from "@/utils/animations";
+import { fallWithFade } from "@/utils/animations";
 import Button from "../button";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -17,11 +17,11 @@ export default function First() {
     }, [controls, inView])
 
   return (
-    <motion.section initial="initial" animate="animate" className="bg-white relative py-10 min-h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
+    <section className="bg-white relative py-10 min-h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
         <div className="absolute top-0 bottom-[20%] overflow-hidden hidden md:block rounded-bl-[350px] z-[10] right-0">
           <img src="/landing.png" className="object-cover h-full" alt="" />
         </div>
-        <motion.div variants={riseWithFade} className="py-8 px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative">
+        <motion.div initial="initial" animate="animate" variants={fallWithFade} className="py-8 duration-[600ms] px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative">
           <div className="md:hidden">
             <br></br>
           </div>
@@ -83,11 +83,10 @@ export default function First() {
                 </svg>
                 <p className="uppercase font-medium">Try Now</p>
               </a>
-             
             </Button>
           </div>
         </motion.div>
         <div className="bg-gradient-to-b from-primary-light to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
-      </motion.section>
+      </section>
   )
 }
