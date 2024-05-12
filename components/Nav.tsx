@@ -12,18 +12,27 @@ export const Nav = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 20) {
-        setActivated(true)
+    // let's initially check if user is reloading and in a target scroll postion
+    if (window.scrollY > 10) {
+      setActivated(true);
+    }
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 10) {
+        setActivated(true);
+      } else {
+        setActivated(false);
       }
-      else {
-        setActivated(false)
-      }
-    })
-  }, [])
+    });
+  }, []);
 
   return (
-    <nav className={`${activated ? 'bg-white border-gray-200' : 'bg-transparent border-transparent'} border-b w-full transition-colors ease-in duration-200 text-gray-900  fixed z-20 top-0 start-0 `}>
+    <nav
+      className={`${
+        activated
+          ? "bg-white border-gray-200"
+          : "bg-transparent border-transparent"
+      } border-b fixed w-full transition-colors ease-in duration-200 text-gray-900  z-20 top-0 start-0 `}
+    >
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 max-w-[100vw]  py-2">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image

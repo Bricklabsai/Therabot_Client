@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { INTERESTS, Interest } from "@/constants/interests";
-import { fadeFromLeft, fadeFromRight, popOut } from "@/utils/animations";
+import { fadeFromLeft, fadeFromRight, popOut, riseWithFade } from "@/utils/animations";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -46,21 +46,21 @@ export default function Interests() {
         <div className="py-8 px-4 sm:mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
           <div className="sm:px-10 w-full sm:w-4/5 mx-auto">
             <motion.h2
-              variants={fadeFromRight}
+              variants={riseWithFade}
               animate={control1}
               ref={ref1}
               initial="initial"
-              className="text-4xl font-medium text-center duration-[800ms]"
+              className="text-4xl font-medium text-center duration-[600ms]"
             >
               CHOOSE WHAT INTEREST YOU
             </motion.h2>
             <br />
             <motion.p
-              variants={fadeFromLeft}
+              variants={riseWithFade}
               animate={control2}
               ref={ref2}
               initial="initial"
-              className="duration-[800ms]"
+              className="duration-[600ms]"
             >
               Psychotherapy is a form of therapeutic treatment that focuses on
               improving mental health conditions through counseling and talk
@@ -79,7 +79,8 @@ export default function Interests() {
                 ref={interestRefs[index]}
                 initial="initial"
                 key={interest.label}
-                className="flex group flex-col gap-3 duration-500"
+                style={{transitionDelay: `${200 + ((index + 1) * 2 * 100)}ms`}}
+                className={`flex group delay-[${200 + ((index + 1) * 4 * 100)}ms] delay-75 flex-col gap-3 duration-[500ms]`}
               >
                 <img
                   className="rounded-2xl"

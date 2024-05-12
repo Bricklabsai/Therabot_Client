@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <div className="bg-white w-screen overflow-x-hidden">
+    <div className="bg-white">
       <First />
       <Banner />
       <Interests />
