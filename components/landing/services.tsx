@@ -5,6 +5,7 @@ import { SERVICES, Service } from "@/constants/services";
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { riseWithFade, slideFromRight } from '@/utils/animations';
+import { useScreenSize } from "@/hooks/screen";
 
 export default function Services() {
     const control1 = useAnimation();
@@ -21,6 +22,9 @@ export default function Services() {
     const inView4 = useInView(ref4);
     const REFS = [ref2, ref3, ref4];
     const CONTROLS = [control2, control3, control4]
+
+    const { isMobile } = useScreenSize()
+
     useEffect(() => {
       if (inView1) {
         control1.start("animate");
@@ -39,7 +43,7 @@ export default function Services() {
     <section className="py-6 bg-white text-black">
       <div className="py-8 px-4 lg:mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
         <div className="mx-auto">
-          <motion.h2 variants={slideFromRight} animate={control1} ref={ref1} initial="initial" className="text-3xl duration-[600ms] max-sm:font-medium sm:text-4xl uppercase tracking-wider">
+          <motion.h2 variants={isMobile ? undefined : slideFromRight} animate={control1} ref={ref1} initial="initial" className="text-3xl duration-[600ms] max-sm:font-medium sm:text-4xl uppercase tracking-wider">
             OUR SERVICES FOR BUILDING HEALTHY RELATIONSHIPS
           </motion.h2>
         </div>
@@ -48,7 +52,7 @@ export default function Services() {
         <div className="md:mx-10 grid grid-rows-3 gap-12">
           {SERVICES.map((service: Service, index: number) => (
             <motion.div
-            variants={riseWithFade} animate={CONTROLS[index]} ref={REFS[index]} initial="initial"
+            variants={isMobile ? undefined : riseWithFade} animate={CONTROLS[index]} ref={REFS[index]} initial="initial"
               key={service.title}
               className="grid grid-cols-12 justify-items-center gap-6 duration-[600ms]"
             >

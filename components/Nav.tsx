@@ -82,8 +82,8 @@ export const Nav = () => {
         <div
           className={`transition-transform duration-300 ease-in-out ${
             isMenuOpen ? "flex" : "hidden"
-          } items-center justify-end py-2 w-full md:flex md:w-auto md:order-1`}
-          id="navbar-sticky"
+          } items-center justify-end py-2 w-full lg:flex lg:w-auto lg:order-1`}
+          id=""
         >
           <ul className="flex flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
             <li>
@@ -102,6 +102,14 @@ export const Nav = () => {
                 className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
               >
                 Pricing
+              </a>
+            </li>
+            <li>
+              <a
+                href="/shop"
+                className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
+              >
+                Shop
               </a>
             </li>
             <li>

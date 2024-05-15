@@ -3,11 +3,14 @@ import { riseWithFade } from "@/utils/animations";
 import Button from "../button";
 import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
+import { useScreenSize } from "@/hooks/screen";
 
 export default function About() {
   const controls = useAnimation();
   const ref = useRef(null);
   const inView = useInView(ref);
+  const { isMobile } = useScreenSize()
+
 
   useEffect(() => {
     if (inView) {
@@ -16,11 +19,11 @@ export default function About() {
   }, [controls, inView]);
   return (
     <section
-      className="bg-white text-black flex items-end  min-h-screen bg-[url('/about.png')]"
+      className="bg-white text-black flex items-end  bg-[url('/about.png')]"
       style={{ backgroundRepeat: "no-repeat", backgroundSize: "cover" }}
     >
       <motion.div
-        variants={riseWithFade}
+        variants={isMobile ? undefined : riseWithFade}
         animate={controls}
         ref={ref}
         initial="initial"

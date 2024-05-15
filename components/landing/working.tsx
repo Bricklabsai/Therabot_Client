@@ -5,6 +5,7 @@ import React from 'react'
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { slideFromLeft, slideFromRight } from '@/utils/animations';
+import { useScreenSize } from '@/hooks/screen';
 
 
 export default function Working() {
@@ -14,6 +15,7 @@ export default function Working() {
     const ref2 = useRef(null);
     const inView1 = useInView(ref1);
     const inView2 = useInView(ref2);
+    const { isMobile } = useScreenSize()
     useEffect(() => {
       if (inView1) {
         control1.start("animate");
@@ -23,10 +25,10 @@ export default function Working() {
       }
     }, [control1, control2, inView1, inView2]);
   return (
-    <section className="py-6 bg-primary-light text-black min-h-screen">
+    <section className="py-6 bg-primary-light text-black">
     <div className="py-8 px-3 mx-3 sm:mx-8 max-w-screen-xl text-center lg:py-16 z-10 relative">
       <div className="grid grid-cols-12 gap-6">
-        <motion.div variants={slideFromLeft} animate={control1} ref={ref1} initial="initial" className="hidden sm:block duration-[600ms] col-span-12 h-full lg:col-span-8">
+        <motion.div variants={isMobile ? undefined : slideFromLeft} animate={control1} ref={ref1} initial="initial" className="hidden sm:block duration-[600ms] col-span-12 h-full lg:col-span-8">
           <img
             loading="lazy"
             className="object-cover h-full w-full rounded-md"
@@ -34,7 +36,7 @@ export default function Working() {
             alt="people sitting"
           />
         </motion.div>
-        <motion.div variants={slideFromRight} animate={control2} ref={ref2} initial="initial" className=" border col-span-12 duration-[600ms] lg:col-span-4 p-8 bg-white rounded-2xl lg:rounded-tl-none lg:rounded-bl-none">
+        <motion.div variants={isMobile ? undefined : slideFromRight} animate={control2} ref={ref2} initial="initial" className=" border col-span-12 duration-[600ms] lg:col-span-4 p-8 bg-white rounded-2xl lg:rounded-tl-none lg:rounded-bl-none">
           <h2 className="text-3xl text-left space-x-2">How it works</h2>
           <br />
           <div className="flex flex-col gap-5">
