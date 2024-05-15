@@ -1,7 +1,5 @@
-import Head from "next/head";
-import Link from "next/link";
-import { LoginForm } from "@/components/loginform";
-import { signIn } from "next-auth/react";
+import { LoginForm } from "@/components/forms/login";
+// import { signIn } from "next-auth/react";
 
 const Login = ({
   searchParams,
@@ -18,12 +16,6 @@ const Login = ({
     return "/";
   };
 
-  const handleGoogleLogin = async () => {
-    await signIn("google-signin", {
-      callbackUrl: getLoginSuccessRedirectUrl(),
-      redirect: false,
-    });
-  };
 
   return (
     <div>
