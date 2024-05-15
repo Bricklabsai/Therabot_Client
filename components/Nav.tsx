@@ -114,7 +114,7 @@ export const Nav = () => {
             </li>
             <li>
               <a
-                href="/blogs"
+                href="/blog"
                 className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
               >
                 Blog

@@ -17,16 +17,15 @@ export default function About() {
       controls.start("animate");
     }
   }, [controls, inView]);
+  //variants={isMobile ? undefined : riseWithFade} animate={controls} initial="initial"
+
   return (
     <section
       className="bg-white text-black flex items-end  bg-[url('/about.png')]"
       style={{ backgroundRepeat: "no-repeat", backgroundSize: "cover" }}
     >
       <motion.div
-        variants={isMobile ? undefined : riseWithFade}
-        animate={controls}
         ref={ref}
-        initial="initial"
         className="h-4/5 duration-[600ms] py-12 px-8 sm:pl-12 sm:pr-20 sm:w-[75%] md:w-1/2 sm:rounded-tr-[200px] bg-gradient-to-r from-primary-light  to-primary-lighter"
       >
         <h2 className="font-medium text-2xl uppercase">ABOUT US</h2>

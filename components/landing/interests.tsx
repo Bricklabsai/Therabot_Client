@@ -1,9 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { INTERESTS, Interest } from "@/constants/interests";
-import { fadeFromLeft, fadeFromRight, popOut, riseWithFade } from "@/utils/animations";
+import {
+  fadeFromLeft,
+  fadeFromRight,
+  popOut,
+  riseWithFade,
+} from "@/utils/animations";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Interests() {
   const control1 = useAnimation();
@@ -21,7 +27,7 @@ export default function Interests() {
   const inView3 = useInView(ref3);
   const inView4 = useInView(ref4);
   const inView5 = useInView(ref5);
-  const interestRefs = [ref3, ref4, ref5]
+  const interestRefs = [ref3, ref4, ref5];
   useEffect(() => {
     if (inView1) {
       control1.start("animate");
@@ -38,7 +44,18 @@ export default function Interests() {
     if (inView5) {
       control5.start("animate");
     }
-  }, [control1,control2, control3, control4, control5, inView1, inView2, inView3, inView4, inView5]);
+  }, [
+    control1,
+    control2,
+    control3,
+    control4,
+    control5,
+    inView1,
+    inView2,
+    inView3,
+    inView4,
+    inView5,
+  ]);
 
   return (
     <div>
@@ -79,10 +96,14 @@ export default function Interests() {
                 ref={interestRefs[index]}
                 initial="initial"
                 key={interest.label}
-                style={{transitionDelay: `${200 + ((index + 1) * 2 * 100)}ms`}}
-                className={`flex group delay-[${200 + ((index + 1) * 4 * 100)}ms] delay-75 flex-col gap-3 duration-[500ms]`}
+                style={{ transitionDelay: `${200 + (index + 1) * 2 * 100}ms` }}
+                className={`flex group delay-[${
+                  200 + (index + 1) * 4 * 100
+                }ms] delay-75 flex-col gap-3 duration-[500ms]`}
               >
-                <img
+                <Image
+                  width={400}
+                  height={700}
                   className="rounded-2xl"
                   src={interest.src}
                   alt={interest.alt}
