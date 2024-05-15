@@ -4,11 +4,14 @@ import { fallWithFade } from "@/utils/animations";
 import Button from "../button";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { useScreenSize } from "@/hooks/screen";
+import Image from 'next/image'
 
 export default function First() {
     const controls = useAnimation();
     const ref = useRef(null)
     const inView = useInView(ref);
+    const { isMobile } = useScreenSize()
 
     useEffect(() => {
         if(inView) {
@@ -17,12 +20,12 @@ export default function First() {
     }, [controls, inView])
 
   return (
-    <section className="bg-white relative py-10 min-h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
+    <section className="bg-white relative py-10 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
         <div className="absolute top-0 bottom-[20%] overflow-hidden hidden md:block rounded-bl-[350px] z-[10] right-0">
-          <img src="/landing.png" className="object-cover h-full" alt="" />
+          <Image width={700}  height={300} src="/landing.png" className="object-cover h-full" alt="" />
         </div>
-        <motion.div initial="initial" animate="animate" variants={fallWithFade} className="py-8 duration-[600ms] px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative">
-          <div className="md:hidden">
+        <motion.div initial="initial" animate="animate" variants={isMobile ? undefined : fallWithFade} className="py-8 duration-[600ms] px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative">
+          <div className="lg:hidden">
             <br></br>
           </div>
           <a

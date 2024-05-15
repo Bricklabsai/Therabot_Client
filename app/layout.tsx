@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Nav } from "@/components/Nav";
-import Footer from "@/components/Footer";
 import "./globals.css";
 import { BASE_URL } from "@/global.config";
-import Providers from "@/components/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,11 +56,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head />
       <body className={`${inter.className} w-screen overflow-x-hidden`}>
-        <Providers>
-          <Nav />
-          {children}
-          <Footer />
-        </Providers>
+        {children}
       </body>
     </html>
   );

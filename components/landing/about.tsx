@@ -3,27 +3,29 @@ import { riseWithFade } from "@/utils/animations";
 import Button from "../button";
 import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
+import { useScreenSize } from "@/hooks/screen";
 
 export default function About() {
   const controls = useAnimation();
   const ref = useRef(null);
   const inView = useInView(ref);
+  const { isMobile } = useScreenSize()
+
 
   useEffect(() => {
     if (inView) {
       controls.start("animate");
     }
   }, [controls, inView]);
+  //variants={isMobile ? undefined : riseWithFade} animate={controls} initial="initial"
+
   return (
     <section
-      className="bg-white text-black flex items-end  min-h-screen bg-[url('/about.png')]"
+      className="bg-white text-black flex items-end  bg-[url('/about.png')]"
       style={{ backgroundRepeat: "no-repeat", backgroundSize: "cover" }}
     >
       <motion.div
-        variants={riseWithFade}
-        animate={controls}
         ref={ref}
-        initial="initial"
         className="h-4/5 duration-[600ms] py-12 px-8 sm:pl-12 sm:pr-20 sm:w-[75%] md:w-1/2 sm:rounded-tr-[200px] bg-gradient-to-r from-primary-light  to-primary-lighter"
       >
         <h2 className="font-medium text-2xl uppercase">ABOUT US</h2>

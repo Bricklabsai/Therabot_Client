@@ -5,6 +5,8 @@ import React from 'react'
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { slideFromLeft, slideFromRight } from '@/utils/animations';
+import { useScreenSize } from '@/hooks/screen';
+import Image from 'next/image'
 
 
 export default function Working() {
@@ -14,6 +16,7 @@ export default function Working() {
     const ref2 = useRef(null);
     const inView1 = useInView(ref1);
     const inView2 = useInView(ref2);
+    const { isMobile } = useScreenSize()
     useEffect(() => {
       if (inView1) {
         control1.start("animate");
@@ -22,38 +25,42 @@ export default function Working() {
         control2.start("animate");
       }
     }, [control1, control2, inView1, inView2]);
+    //variants={isMobile ? undefined : slideFromLeft} animate={control1} ref={ref1} initial="initial"
+    // variants={isMobile ? undefined : slideFromRight} animate={control2} ref={ref2} initial="initial" 
   return (
-    <section className="py-6 bg-primary-light text-black min-h-screen">
+    <section className="py-6 bg-primary-light text-black">
     <div className="py-8 px-3 mx-3 sm:mx-8 max-w-screen-xl text-center lg:py-16 z-10 relative">
       <div className="grid grid-cols-12 gap-6">
-        <motion.div variants={slideFromLeft} animate={control1} ref={ref1} initial="initial" className="hidden sm:block duration-[600ms] col-span-12 h-full lg:col-span-8">
-          <img
+        <motion.div  className="hidden sm:block duration-[600ms] col-span-12 h-full lg:col-span-8">
+          <Image
+           width={800}
+           height={500}
             loading="lazy"
             className="object-cover h-full w-full rounded-md"
             src="/sitting.jpeg"
             alt="people sitting"
           />
         </motion.div>
-        <motion.div variants={slideFromRight} animate={control2} ref={ref2} initial="initial" className=" border col-span-12 duration-[600ms] lg:col-span-4 p-8 bg-white rounded-2xl lg:rounded-tl-none lg:rounded-bl-none">
+        <motion.div className=" border col-span-12 duration-[600ms] lg:col-span-4 p-8 bg-white rounded-2xl lg:rounded-tl-none lg:rounded-bl-none">
           <h2 className="text-3xl text-left space-x-2">How it works</h2>
           <br />
           <div className="flex flex-col gap-5">
             <div className="flex gap-5 items-start">
-              <img src="/therapy1.png" className="object-contain" alt="" />
+              <Image width={72} height={72} src="/therapy1.png" className="object-contain" alt="" />
               <p className="text-left text-sm leading-6">
                 Psychotherapy is a type of treatment that helps individuals
                 understand and overcome their psychological problems.
               </p>
             </div>
             <div className="flex gap-5">
-              <img src="/therapy2.png" className="object-contain" alt="" />
+              <Image width={72} height={72} src="/therapy2.png" className="object-contain" alt="" />
               <p className="text-left text-sm leading-6">
                 The therapy typically involves several steps that are
                 necessary to achieve a positive outcome.
               </p>
             </div>
             <div className="flex gap-5">
-              <img src="/therapy3.png" className="object-contain" alt="" />
+              <Image width={72} height={72} src="/therapy3.png" className="object-contain" alt="" />
               <p className="text-left text-sm leading-6">
                 By working through the therapy steps, patients can
                 experience significant improvements in their mental health

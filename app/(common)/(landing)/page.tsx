@@ -21,7 +21,7 @@ function page() {
     <div className="bg-white">
       <First />
       <Banner />
-      <Interests />
+      {/* <Interests /> */}
       <Working />
       <Services />
       <About />

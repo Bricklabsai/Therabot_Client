@@ -1,27 +1,35 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
+import { useScreenSize } from "@/hooks/screen";
 import { riseWithFade } from "@/utils/animations";
 import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
+import Image from 'next/image'
 
 export default function Banner() {
     const controls = useAnimation();
     const ref = useRef(null)
     const inView = useInView(ref);
+    const { isMobile } = useScreenSize();
 
     useEffect(() => {
         if(inView) {
             controls.start("animate")
         }
-    }, [controls, inView])
+    }, [controls, inView, isMobile])
+
+
+    const animationProps = {animate:controls, variants: riseWithFade, initial: "initial"}
 
   return (
-    <motion.section className="duration-[600ms]" variants={riseWithFade} animate={controls} ref={ref} initial="initial">
-      <div className="flex justify-center items-center h-20 bg-white text-black border">
+    <>
+    <motion.section className="duration-[600ms]" ref={ref}>
+      <div className="flex justify-center items-center h-20 bg-white text-black border border-gray-100">
         <div className="text-center flex flex-row items-center space-x-2">
-          <p className="text-xl font-semibold">Backed by</p>
+          <p className="text-xl font-semibold">Backed by 
+          </p>
           <div className="inline-flex items-center">
-            <img
+            <Image
               alt="Microsoft for Startups"
               loading="lazy"
               width="32"
@@ -37,5 +45,6 @@ export default function Banner() {
         </div>
       </div>
     </motion.section>
+    </>
   );
 }

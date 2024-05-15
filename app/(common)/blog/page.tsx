@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Metadata } from "next";
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "Blog - Therabot",
@@ -32,7 +33,9 @@ function page() {
             href="#"
           >
             <div className="aspect-w-16 aspect-h-11">
-              <img
+              <Image
+                height={230}
+                width={350}
                 className="w-full object-cover rounded-xl"
                 src="https://images.unsplash.com/photo-1633114128174-2f8aa49759b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                 alt="Image Description"
@@ -48,7 +51,9 @@ function page() {
               </p>
             </div>
             <div className="mt-auto flex items-center gap-x-3">
-              <img
+              <Image
+                height={32}
+                width={32}
                 className="size-8 rounded-full"
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
                 alt="Image Description"
@@ -64,7 +69,9 @@ function page() {
             href="#"
           >
             <div className="aspect-w-16 aspect-h-11">
-              <img
+              <Image
+                height={230}
+                width={350}
                 className="w-full object-cover rounded-xl"
                 src="https://images.unsplash.com/photo-1562851529-c370841f6536?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80"
                 alt="Image Description"
@@ -80,7 +87,9 @@ function page() {
               </p>
             </div>
             <div className="mt-auto flex items-center gap-x-3">
-              <img
+              <Image
+               height={32}
+               width={32}
                 className="size-8 rounded-full"
                 src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
                 alt="Image Description"
@@ -96,7 +105,9 @@ function page() {
             href="#"
           >
             <div className="aspect-w-16 aspect-h-11">
-              <img
+              <Image
+              height={230}
+              width={350}
                 className="w-full object-cover rounded-xl"
                 src="https://images.unsplash.com/photo-1521321205814-9d673c65c167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3548&q=80"
                 alt="Image Description"
@@ -111,7 +122,9 @@ function page() {
               </p>
             </div>
             <div className="mt-auto flex items-center gap-x-3">
-              <img
+              <Image
+                width={32}
+                height={32}
                 className="size-8 rounded-full"
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
                 alt="Image Description"

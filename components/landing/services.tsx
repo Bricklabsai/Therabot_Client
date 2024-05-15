@@ -1,45 +1,64 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
+"use client";
 import React from "react";
 import { SERVICES, Service } from "@/constants/services";
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { riseWithFade, slideFromRight } from '@/utils/animations';
+import { riseWithFade, slideFromRight } from "@/utils/animations";
+import { useScreenSize } from "@/hooks/screen";
+import Image from "next/image";
 
 export default function Services() {
-    const control1 = useAnimation();
-    const control2 = useAnimation();
-    const control3 = useAnimation();
-    const control4 = useAnimation();
-    const ref1 = useRef(null);
-    const ref2 = useRef(null);
-    const ref3 = useRef(null);
-    const ref4 = useRef(null);
-    const inView1 = useInView(ref1);
-    const inView2 = useInView(ref2);
-    const inView3 = useInView(ref3);
-    const inView4 = useInView(ref4);
-    const REFS = [ref2, ref3, ref4];
-    const CONTROLS = [control2, control3, control4]
-    useEffect(() => {
-      if (inView1) {
-        control1.start("animate");
-      }
-      if (inView2) {
-        control2.start("animate");
-      }
-      if (inView3) {
-        control3.start("animate");
-      }
-      if (inView4) {
-        control4.start("animate");
-      }
-    }, [control1, control2, control3, control4,inView1, inView2, inView3, inView4]);
+  const control1 = useAnimation();
+  const control2 = useAnimation();
+  const control3 = useAnimation();
+  const control4 = useAnimation();
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const inView1 = useInView(ref1);
+  const inView2 = useInView(ref2);
+  const inView3 = useInView(ref3);
+  const inView4 = useInView(ref4);
+  const REFS = [ref2, ref3, ref4];
+  const CONTROLS = [control2, control3, control4];
+
+  const { isMobile } = useScreenSize();
+
+  useEffect(() => {
+    if (inView1) {
+      control1.start("animate");
+    }
+    if (inView2) {
+      control2.start("animate");
+    }
+    if (inView3) {
+      control3.start("animate");
+    }
+    if (inView4) {
+      control4.start("animate");
+    }
+  }, [
+    control1,
+    control2,
+    control3,
+    control4,
+    inView1,
+    inView2,
+    inView3,
+    inView4,
+  ]);
+  // variants={isMobile ? undefined : slideFromRight} animate={control1}
+  //  variants={isMobile ? undefined : riseWithFade} animate={CONTROLS[index]} initial="initial"
   return (
     <section className="py-6 bg-white text-black">
       <div className="py-8 px-4 lg:mx-12 max-w-screen-xl text-center lg:py-16 z-10 relative">
         <div className="mx-auto">
-          <motion.h2 variants={slideFromRight} animate={control1} ref={ref1} initial="initial" className="text-3xl duration-[600ms] max-sm:font-medium sm:text-4xl uppercase tracking-wider">
+          <motion.h2
+            ref={ref1}
+            className="text-3xl duration-[600ms] max-sm:font-medium sm:text-4xl uppercase tracking-wider"
+          >
             OUR SERVICES FOR BUILDING HEALTHY RELATIONSHIPS
           </motion.h2>
         </div>
@@ -48,12 +67,14 @@ export default function Services() {
         <div className="md:mx-10 grid grid-rows-3 gap-12">
           {SERVICES.map((service: Service, index: number) => (
             <motion.div
-            variants={riseWithFade} animate={CONTROLS[index]} ref={REFS[index]} initial="initial"
+              ref={REFS[index]}
               key={service.title}
               className="grid grid-cols-12 justify-items-center gap-6 duration-[600ms]"
             >
               <div className="hidden md:block md:col-span-6 gap-12 h-full">
-                <img
+                <Image
+                  width={400}
+                  height={300}
                   className="object-cover h-full"
                   src={service.image}
                   alt=""
