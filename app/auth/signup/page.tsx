@@ -1,4 +1,3 @@
-import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { SignupForm } from "@/components/forms/signup";
 export default function Page({
@@ -6,7 +5,6 @@ export default function Page({
 }: {
   searchParams: { error: string };
 }) {
-  const router = useRouter();
 
   const handleGoogleSignup = async () => {
     await signIn("google-signup", {
