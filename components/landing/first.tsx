@@ -30,11 +30,8 @@ export default function First() {
           alt=""
         />
       </div>
-      <motion.div
-        initial="initial"
-        animate="animate"
-        variants={isMobile ? undefined : fallWithFade}
-        className="py-8 duration-[600ms] px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative"
+      <div
+        className="py-8 duration-[600ms] fade-in-100 px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative"
       >
         <div className="lg:hidden">
           <br></br>
@@ -82,7 +79,7 @@ export default function First() {
           <br />
           <Button
             asChild={true}
-            className="shadow-md w-fit shadow-gray-400 max-sm:py-4 max-sm:px-12 flex gap-4 bg-primary-dark hover:bg-primary-darker"
+            className="shadow-md w-fit text-white shadow-gray-400 max-sm:py-4 max-sm:px-12 flex gap-4 bg-primary-dark hover:bg-primary-darker"
           >
             <a href="https://shorturl.at/aFY78">
               <svg
@@ -101,7 +98,7 @@ export default function First() {
             </a>
           </Button>
         </div>
-      </motion.div>
+      </div>
       <div className="bg-gradient-to-b from-primary-light to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
     </section>
   );

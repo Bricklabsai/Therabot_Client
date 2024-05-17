@@ -26,12 +26,14 @@ export const Nav = () => {
   }, []);
 
   return (
+    <>
+    {/* <div className="h-20 top-0 right-0 bg-transparent"></div> */}
     <nav
       className={`${
         activated
           ? "bg-white border-gray-200"
           : "bg-transparent border-transparent"
-      } border-b fixed w-full transition-colors ease-in duration-200 text-gray-900  z-20 top-0 start-0 `}
+      } border-b fixed top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-20 start-0 `}
     >
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 max-w-[100vw]  py-2">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -132,5 +134,6 @@ export const Nav = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
