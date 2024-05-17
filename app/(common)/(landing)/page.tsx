@@ -9,6 +9,7 @@ import Interests from "@/components/landing/interests";
 import Working from "@/components/landing/working";
 import Services from "@/components/landing/services";
 import About from "@/components/landing/about";
+import FAQ from "@/components/landing/faq";
 
 export const metadata: Metadata = {
   title: "Therabot: Your Personal AI Therapist",
@@ -23,8 +24,9 @@ function page() {
       <Banner />
       {/* <Interests /> */}
       <Working />
-      <Services />
+      {/* <Services /> */}
       <About />
+      <FAQ />
     </div>
   );
 }

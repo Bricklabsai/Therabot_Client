@@ -1,5 +1,5 @@
-import { tMerge } from "@/lib/utils";
 import {Slot} from '@radix-ui/react-slot'
+import { cn } from "@/lib/utils";
 
 interface Props {
   children: React.ReactNode;
@@ -19,7 +19,7 @@ export default function Button(props: Props) {
   const Parent = (props.asChild === true) ? Slot : 'button'
   return (
     <Parent
-      className={tMerge("bg-secondary py-2 px-4 outline-transparent rounded-full", props.className)}
+      className={cn("bg-secondary py-2 px-4 outline-transparent rounded-full", props.className)}
       onClick={props.onClick}
     >
       {props.children}

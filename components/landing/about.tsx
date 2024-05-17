@@ -1,33 +1,19 @@
-'use client';
-import { riseWithFade } from "@/utils/animations";
+"use client";
+
 import Button from "../button";
-import { motion, useAnimation, useInView } from "framer-motion";
-import React, { useEffect, useRef } from "react";
-import { useScreenSize } from "@/hooks/screen";
+import React from "react";
+import Image from 'next/image';
 
 export default function About() {
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const inView = useInView(ref);
-  const { isMobile } = useScreenSize()
-
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("animate");
-    }
-  }, [controls, inView]);
   //variants={isMobile ? undefined : riseWithFade} animate={controls} initial="initial"
 
   return (
     <section
-      className="bg-white text-black flex items-end  bg-[url('/about.png')]"
-      style={{ backgroundRepeat: "no-repeat", backgroundSize: "cover" }}
+      className="py-8 text-black sm:px-8 items-center justify-between flex bg-primary-light min-h-[600px]  "
+      // style={{ backgroundRepeat: "no-repeat", backgroundSize: "contain" }}  bg-[url('/ai-thera.webp')]
     >
-      <motion.div
-        ref={ref}
-        className="h-4/5 duration-[600ms] py-12 px-8 sm:pl-12 sm:pr-20 sm:w-[75%] md:w-1/2 sm:rounded-tr-[200px] bg-gradient-to-r from-primary-light  to-primary-lighter"
-      >
+      {/* sm:rounded-tr-[200px] */}
+      <div className="duration-[600ms] min-h-[520px] py-12 px-8 sm:pl-12 sm:pr-20 sm:w-[75%] md:w-1/2  bg-gradient-to-r from-neutral-100 rounded h-full to-white">
         <h2 className="font-medium text-2xl uppercase">ABOUT US</h2>
         <br />
         <p>
@@ -60,7 +46,18 @@ export default function About() {
             <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
           </svg>
         </Button>
-      </motion.div>
+      </div>
+
+      <div className="hidden min-h-[520px] sm:block duration-[600ms] h-full">
+        <Image
+          width={500}
+          height={800}
+          loading="lazy"
+          className="h-full rounded-md"
+          src="/ai-thera.webp"
+          alt="people sitting"
+        />
+      </div>
     </section>
   );
 }

@@ -3,6 +3,8 @@
 
 import React from "react";
 import logo from "@/public/assets/therabot_removed.png";
+import playBanner from "@/public/get_on_google.png";
+
 import Image from "next/image";
 
 const Footer: React.FC = () => {
@@ -30,6 +32,16 @@ const Footer: React.FC = () => {
                 couples, and families.
               </p>
             </div>
+            <br />
+            <a href="#" className="flex items-center">
+              <Image
+                src={playBanner}
+                className="object-contain me-3"
+                alt="Gtahidi Logo"
+                width={250}
+                height={100}
+              />
+            </a>
           </div>
 
           <div className="col-span-12 md:col-span-4 p-2">
@@ -39,18 +51,28 @@ const Footer: React.FC = () => {
             <br />
             <ul className="text-gray-500 dark:text-gray-400 flex flex-col gap-3 font-medium">
               <li className="">
-                <a href="/" className="hover:underline">
-                  DeveIopers
+                <a href="/pricing" className="hover:underline">
+                  Pricing
                 </a>
               </li>
               <li>
-                <a href="/" className="hover:underline">
-                  Doctors
+                <a href="/shop" className="hover:underline">
+                  Shop
                 </a>
               </li>
               <li>
-                <a href="/" className="hover:underline">
-                  Students
+                <a href="/blog" className="hover:underline">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:underline">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="hover:underline">
+                  About
                 </a>
               </li>
             </ul>
@@ -72,20 +94,25 @@ const Footer: React.FC = () => {
                   Terms &amp; Conditions
                 </a>
               </li>
+              <li className="">
+                <a href="/TermsConditions" className="hover:underline">
+                  Cookie Policy
+                </a>
+              </li>
             </ul>
           </div>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2024{" "}
-            <a href="#" className="hover:underline">
+            © 2024
+            <a href="#" className="hover:underline ml-1">
               Bricklabsai™
             </a>
             . Made with ❤️ by Bricklabsai .
           </span>
-          <div className="flex mt-4 sm:justify-center sm:mt-0">
-            <a
+          <div className="flex mt-4 px-8 py-2 items-center justify-center sm:mt-0">
+            {/* <a
               href="#"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
@@ -103,33 +130,28 @@ const Footer: React.FC = () => {
                 />
               </svg>
               <span className="sr-only">Facebook page</span>
-            </a>
+            </a> */}
 
             <a
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              href="https://x.com/BricklabsAI"
+              className="text-gray-500 hover:text-primary-dark duration-100 ease-in transition-colors dark:hover:text-white ms-5"
             >
               <svg
-                className="w-4 h-4"
-                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
                 fill="currentColor"
-                viewBox="0 0 20 17"
+                className="h-5 w-5"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
-                  clipRule="evenodd"
-                />
+                <path d="M8 2H1L9.26086 13.0145L1.44995 21.9999H4.09998L10.4883 14.651L16 22H23L14.3917 10.5223L21.8001 2H19.1501L13.1643 8.88578L8 2ZM17 20L5 4H7L19 20H17Z"></path>
               </svg>
               <span className="sr-only">Twitter page</span>
             </a>
             <a
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              href="https://github.com/Bricklabsai/Therabot_Client"
+              className="text-gray-500 hover:text-primary-dark duration-100 ease-in transition-colors dark:hover:text-white ms-5"
             >
               <svg
-                className="w-4 h-4"
+                className="w-6 h-6"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -142,9 +164,9 @@ const Footer: React.FC = () => {
                 />
               </svg>
 
-              <span className="sr-only">Youtube account</span>
+              <span className="sr-only">Github account</span>
             </a>
-            <a
+            {/* <a
               href="#"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
@@ -181,7 +203,7 @@ const Footer: React.FC = () => {
                 />
               </svg>
               <span className="sr-only">Tiktok Page</span>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

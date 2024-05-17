@@ -26,12 +26,14 @@ export const Nav = () => {
   }, []);
 
   return (
+    <>
+    {/* <div className="h-20 top-0 right-0 bg-transparent"></div> */}
     <nav
       className={`${
         activated
           ? "bg-white border-gray-200"
           : "bg-transparent border-transparent"
-      } border-b fixed w-full transition-colors ease-in duration-200 text-gray-900  z-20 top-0 start-0 `}
+      } border-b fixed top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-20 start-0 `}
     >
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 max-w-[100vw]  py-2">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -85,7 +87,7 @@ export const Nav = () => {
           } items-center justify-end py-2 w-full lg:flex lg:w-auto lg:order-1`}
           id=""
         >
-          <ul className="flex flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+          <ul className={` ${activated ? "" : "shadow-md"} flex flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white`}>
             <li>
               <a
                 href="/"
@@ -132,5 +134,6 @@ export const Nav = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
