@@ -2,46 +2,29 @@
 /* eslint-disable @next/next/no-img-element */
 import Button from '../button'
 import React from 'react'
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { slideFromLeft, slideFromRight } from '@/utils/animations';
-import { useScreenSize } from '@/hooks/screen';
+
 import Image from 'next/image'
 
 
 export default function Working() {
-    const control1 = useAnimation();
-    const control2 = useAnimation();
-    const ref1 = useRef(null);
-    const ref2 = useRef(null);
-    const inView1 = useInView(ref1);
-    const inView2 = useInView(ref2);
-    const { isMobile } = useScreenSize()
-    useEffect(() => {
-      if (inView1) {
-        control1.start("animate");
-      }
-      if (inView2) {
-        control2.start("animate");
-      }
-    }, [control1, control2, inView1, inView2]);
+
     //variants={isMobile ? undefined : slideFromLeft} animate={control1} ref={ref1} initial="initial"
     // variants={isMobile ? undefined : slideFromRight} animate={control2} ref={ref2} initial="initial" 
   return (
     <section className="py-6 bg-primary-light text-black">
     <div className="py-8 px-3 mx-3 sm:mx-8 max-w-screen-xl text-center lg:py-16 z-10 relative">
       <div className="grid grid-cols-12 gap-6">
-        <motion.div  className="hidden sm:block duration-[600ms] col-span-12 h-full lg:col-span-8">
+        <div  className="hidden max-h-[520px] sm:block duration-[600ms] col-span-12 h-full lg:col-span-8">
           <Image
            width={800}
-           height={500}
+           height={300}
             loading="lazy"
             className="object-cover h-full w-full rounded-md"
-            src="/sitting.jpeg"
+            src="/stornado.jfif"
             alt="people sitting"
           />
-        </motion.div>
-        <motion.div className=" border col-span-12 duration-[600ms] lg:col-span-4 p-8 bg-white rounded-2xl lg:rounded-tl-none lg:rounded-bl-none">
+        </div>
+        <div className=" border col-span-12 duration-[600ms] lg:col-span-4 p-8 bg-white rounded-2xl lg:rounded-tl-none lg:rounded-bl-none">
           <h2 className="text-3xl text-left space-x-2">How it works</h2>
           <br />
           <div className="flex flex-col gap-5">
@@ -81,7 +64,7 @@ export default function Working() {
               <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
             </svg>
           </Button>
-        </motion.div>
+        </div>
       </div>
     </div>
   </section>

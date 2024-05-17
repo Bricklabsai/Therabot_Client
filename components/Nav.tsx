@@ -87,7 +87,7 @@ export const Nav = () => {
           } items-center justify-end py-2 w-full lg:flex lg:w-auto lg:order-1`}
           id=""
         >
-          <ul className="flex flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+          <ul className={` ${activated ? "" : "shadow-md"} flex flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white`}>
             <li>
               <a
                 href="/"

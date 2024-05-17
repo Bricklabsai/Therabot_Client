@@ -1,38 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { fallWithFade } from "@/utils/animations";
 import Button from "../button";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { useScreenSize } from "@/hooks/screen";
 import Image from "next/image";
 
 export default function First() {
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const inView = useInView(ref);
-  const { isMobile } = useScreenSize();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("animate");
-    }
-  }, [controls, inView]);
-
   return (
     <section className="bg-white relative py-10 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
       <div className="absolute top-0 bottom-[20%] overflow-hidden hidden md:block rounded-bl-[350px] z-[10] right-0">
         <Image
           width={700}
           height={300}
-          src="/landing.png"
+          src="/new_landin.jfif"
           className="object-cover h-full"
           alt=""
         />
       </div>
-      <div
-        className="py-8 duration-[600ms] fade-in-100 px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative"
-      >
+      <div className="py-8 duration-[600ms] fade-in-100 px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative">
         <div className="lg:hidden">
           <br></br>
         </div>
@@ -64,17 +47,15 @@ export default function First() {
           </svg>
         </a>
         <br />
-        <div className="min-[250px] z-[50] max-w-[500px] w-full">
-          <h1 className="mb-4 text-5xl text-left font-extrabold tracking-normal leading-12 text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
-            Never Walk Alone
+        <div className="min-[250px] z-[50] max-w-[600px] w-full">
+          <h1 className="mb-4 text-5xl text-left font-extrabold tracking-normal leading-[50px] text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
+            Your Compassionate Digital Partner
           </h1>
           <br />
           <p className="mb-8 text-left text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200">
-            Therabot is your compassionate digital companion, here to lend an
-            empathetic ear and guide you through life&apos;s twists and turns.
-            Whether you&apos;re battling twists and turns. Whether you&apos;re
-            battling anxiety, seeking solace or simply need someone to listen,
-            Therabot is by you side.
+            Life&apos;s journey can be daunting but remember that you aren&apos;t alone.
+            Therabot is here to support you, offering encouragement, resilience,
+            and hope. Together, we will navigate the path ahead.
           </p>
           <br />
           <Button

@@ -24,7 +24,7 @@ function page() {
       <Banner />
       {/* <Interests /> */}
       <Working />
-      <Services />
+      {/* <Services /> */}
       <About />
       <FAQ />
     </div>
