@@ -16,7 +16,7 @@ export default function FAQ() {
           </div>
           <Accordion type="single" collapsible>
             {FAQS.map((faq: FAQProp) => (<div key={faq.title}>
-                <AccordionItem value="item-1">
+                <AccordionItem value={faq.title}>
               <AccordionTrigger>{faq.title}</AccordionTrigger>
               <AccordionContent className="text-left">
                 {faq.description}
