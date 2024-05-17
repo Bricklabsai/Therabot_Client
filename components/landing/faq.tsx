@@ -14,11 +14,11 @@ export default function FAQ() {
           <div className="p-4 text-lg font-semibold">
             <h2>Frequently Asked Questions</h2>
           </div>
-          <Accordion type="single" collapsible>
+          <Accordion type="single" collapsible className="flex flex-col gap-2">
             {FAQS.map((faq: FAQProp) => (<div key={faq.title}>
-                <AccordionItem value={faq.title}>
-              <AccordionTrigger>{faq.title}</AccordionTrigger>
-              <AccordionContent className="text-left">
+                <AccordionItem  value={faq.title}>
+              <AccordionTrigger className="font-semibold text-left">{faq.title}</AccordionTrigger>
+              <AccordionContent className="text-left text-neutral-800 text-base">
                 {faq.description}
               </AccordionContent>
             </AccordionItem>
