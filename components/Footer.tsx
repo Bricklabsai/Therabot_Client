@@ -3,6 +3,8 @@
 
 import React from "react";
 import logo from "@/public/assets/therabot_removed.png";
+import playBanner from "@/public/get_on_google.png";
+
 import Image from "next/image";
 
 const Footer: React.FC = () => {
@@ -30,6 +32,16 @@ const Footer: React.FC = () => {
                 couples, and families.
               </p>
             </div>
+            <br />
+            <a href="#" className="flex items-center">
+              <Image
+                src={playBanner}
+                className="object-contain me-3"
+                alt="Gtahidi Logo"
+                width={250}
+                height={100}
+              />
+            </a>
           </div>
 
           <div className="col-span-12 md:col-span-4 p-2">
@@ -39,18 +51,28 @@ const Footer: React.FC = () => {
             <br />
             <ul className="text-gray-500 dark:text-gray-400 flex flex-col gap-3 font-medium">
               <li className="">
-                <a href="/" className="hover:underline">
-                  DeveIopers
+                <a href="/pricing" className="hover:underline">
+                  Pricing
                 </a>
               </li>
               <li>
-                <a href="/" className="hover:underline">
-                  Doctors
+                <a href="/shop" className="hover:underline">
+                  Shop
                 </a>
               </li>
               <li>
-                <a href="/" className="hover:underline">
-                  Students
+                <a href="/blog" className="hover:underline">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:underline">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="hover:underline">
+                  About
                 </a>
               </li>
             </ul>
@@ -70,6 +92,11 @@ const Footer: React.FC = () => {
               <li>
                 <a href="/TermsConditions" className="hover:underline">
                   Terms &amp; Conditions
+                </a>
+              </li>
+              <li className="">
+                <a href="/TermsConditions" className="hover:underline">
+                  Cookie Policy
                 </a>
               </li>
             </ul>
