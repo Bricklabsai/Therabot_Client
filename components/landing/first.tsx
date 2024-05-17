@@ -6,12 +6,12 @@ import Image from "next/image";
 export default function First() {
   return (
     <section className="bg-white relative py-10 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
-      <div className="absolute top-0 bottom-[20%] overflow-hidden hidden md:block rounded-bl-[350px] z-[10] right-0">
+      <div className="absolute top-0 bottom-[20%] overflow-hidden hidden lg:block rounded-bl-[350px] z-[10] right-0">
         <Image
           width={700}
           height={300}
           src="/new_landin.jfif"
-          className="object-cover h-full"
+          className="object-cover brightness-50 h-full"
           alt=""
         />
       </div>
@@ -48,11 +48,14 @@ export default function First() {
         </a>
         <br />
         <div className="min-[250px] z-[50] max-w-[600px] w-full">
-          <h1 className="mb-4 text-5xl text-left font-extrabold tracking-normal leading-[50px] text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
+          <h1 className="mb-4 hidden md:block text-4xl text-left font-extrabold tracking-normal leading-[50px] text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
             Your Compassionate Digital Partner
           </h1>
+          <h1 className="mb-4 md:hidden text-5xl text-left font-extrabold tracking-normal leading-[80px] text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
+            Never Walk Alone
+          </h1>
           <br />
-          <p className="mb-8 text-left text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200">
+          <p className="mb-8 md:mb-1 text-left text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200">
             Life&apos;s journey can be daunting but remember that you aren&apos;t alone.
             Therabot is here to support you, offering encouragement, resilience,
             and hope. Together, we will navigate the path ahead.

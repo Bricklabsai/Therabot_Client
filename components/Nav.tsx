@@ -33,7 +33,7 @@ export const Nav = () => {
         activated
           ? "bg-white border-gray-200"
           : "bg-transparent border-transparent"
-      } border-b fixed top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-20 start-0 `}
+      } border-b fixed max-h-20 top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-20 start-0 `}
     >
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 max-w-[100vw]  py-2">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -82,12 +82,12 @@ export const Nav = () => {
           </button>
         </div>
         <div
-          className={`transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? "flex" : "hidden"
+          className={`transition-transform flex bg-transparent duration-300 origin-top-right w-fit ease-in-out ${
+            isMenuOpen ? "" : ""
           } items-center justify-end py-2 w-full lg:flex lg:w-auto lg:order-1`}
           id=""
         >
-          <ul className={` ${activated ? "" : "shadow-md"} flex flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white`}>
+          <ul className={` ${activated ? "" : "shadow-md"} ${isMenuOpen ? "scale-1 opacity-100" : "max-lg:scale-0 max-lg:opacity-100"} transition-transform origin-top-right duration-200 flex flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white`}>
             <li>
               <a
                 href="/"
