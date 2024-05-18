@@ -63,7 +63,7 @@ export default function First() {
           <br />
           <Button
             asChild={true}
-            className="shadow-md w-fit text-white shadow-gray-400 max-sm:py-4 max-sm:px-12 flex gap-4 bg-primary-dark hover:bg-primary-darker"
+            className="shadow-md w-fit animate-bounce text-white shadow-gray-400 max-sm:py-4 max-sm:px-12 flex gap-4 bg-primary-dark hover:bg-primary-darker"
           >
             <a href="https://shorturl.at/aFY78">
               <svg
