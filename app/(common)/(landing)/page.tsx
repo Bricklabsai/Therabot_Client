@@ -25,7 +25,7 @@ function page() {
       {/* <Interests /> */}
       <Working />
       {/* <Services /> */}
-      <About />
+      {/* <About /> */}
       <FAQ preview={true} />
     </div>
   );
