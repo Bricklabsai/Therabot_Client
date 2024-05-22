@@ -11,7 +11,7 @@ import {
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store/store";
 
-export default function ProductTitle({
+export default function Product({
   product,
   category,
   name,
