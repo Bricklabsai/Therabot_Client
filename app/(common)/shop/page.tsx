@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { Metadata } from "next";
-import Product from "@/components/product";
 import Link from "next/link";
 
 type Product = {
