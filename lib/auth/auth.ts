@@ -1,9 +1,11 @@
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from 'next-auth/providers/google'
-import { NextAuthOptions } from 'next-auth';
 import axios from '@/lib/axios/public'
+import NextAuth from "next-auth"
+import { NextAuthConfig } from "next-auth";
 
-export const authOptions: NextAuthOptions = {
+
+const authOptions: NextAuthConfig = {
     pages: {
         signIn: '/auth/login'
     },
@@ -15,7 +17,7 @@ export const authOptions: NextAuthOptions = {
             return token;
         },
         async session({ session, token }) {
-            session.accessToken = token.accessToken
+            session.sessionToken = token.accessToken as unknown as string
             //session.user.id = token.userId as string;
             //session.user.email = token.email as string;
             //session.user.name = token.name;
@@ -110,3 +112,5 @@ export const authOptions: NextAuthOptions = {
     },
 
 }
+
+export const { auth, handlers } = NextAuth(authOptions)
