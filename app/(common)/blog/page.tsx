@@ -21,7 +21,7 @@ function page() {
   return (
     <div>
       <div className=" py-28 sm:px-6 bg-white lg:px-8 lg:py-20 mx-auto">
-        <div className="max-w-2xl mx-auto text-left py-3 mb-10 lg:mb-14">
+        <div className="max-w-2xl mx-auto text-center py-3 mb-10 lg:mb-14">
           <h2 className="text-2xl font-bold md:text-4xl text-black md:leading-tight ">
             Blog
           </h2>
