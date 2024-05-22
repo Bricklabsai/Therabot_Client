@@ -26,7 +26,7 @@ function page() {
       <Working />
       {/* <Services /> */}
       <About />
-      <FAQ />
+      <FAQ preview={true} />
     </div>
   );
 }
