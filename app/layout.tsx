@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Therabot: Your Personal AI Therapist",
+    default: "Therabot: Your Compassionate Digital Partner",
     template: "%s | Therabot",
   },
   keywords:
     "AI therapist, therapy bot, mental health support, online counseling, virtual therapy, emotional well-being, cognitive behavioral therapy, personalized therapy sessions",
   description:
-    "Experience personalized therapy sessions with Therabot, an advanced AI therapist designed to provide support and guidance whenever you need it.",
+    "Life's journey can be daunting but remember that you aren't alone.",
   openGraph: {
-    title: "Therabot: Your Personal AI Therapist",
+    title: "Therabot: Your Compassionate Digital Partner",
     description:
-      "Experience personalized therapy sessions with Therabot, an advanced AI therapist designed to provide support and guidance whenever you need it.",
+      "Life's journey can be daunting but remember that you aren't alone.",
     url: BASE_URL,
     siteName: "Therabot",
     locale: "en-US",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Therabot: Your Personal AI Therapist",
+    title: "Therabot: Your Compassionate Digital Partner",
     description:
-      "Experience personalized therapy sessions with Therabot, an advanced AI therapist designed to provide support and guidance whenever you need it.",
+      "Life's journey can be daunting but remember that you aren't alone.",
     card: "summary_large_image",
     site: "@trytherabot",
     images: [`${BASE_URL}/assets/therabot.jpeg`],

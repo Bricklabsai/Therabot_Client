@@ -12,9 +12,9 @@ import About from "@/components/landing/about";
 import FAQ from "@/components/landing/faq";
 
 export const metadata: Metadata = {
-  title: "Therabot: Your Personal AI Therapist",
+  title: "Therabot: Your Compassionate Digital Partner",
   description:
-    "Experience personalized therapy sessions with Therabot, an advanced AI therapist designed to provide support and guidance whenever you need it.",
+    "Life's journey can be daunting but remember that you aren't alone.",
 };
 
 function page() {
@@ -25,8 +25,8 @@ function page() {
       {/* <Interests /> */}
       <Working />
       {/* <Services /> */}
-      <About />
-      <FAQ />
+      {/* <About /> */}
+      <FAQ preview={true} />
     </div>
   );
 }
