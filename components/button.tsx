@@ -19,7 +19,7 @@ export default function Button(props: Props) {
   const Parent = (props.asChild === true) ? Slot : 'button'
   return (
     <Parent
-      className={cn("bg-secondary py-2 px-4 outline-transparent rounded-full", props.className)}
+      className={cn("bg-secondary py-2 px-4 outline-transparent", props.className)}
       onClick={props.onClick}
     >
       {props.children}
