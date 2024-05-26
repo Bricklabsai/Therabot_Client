@@ -49,9 +49,10 @@ export const Nav = () => {
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          
           <button
             type="button"
-            className="text-white font-semibold bg-primary-dark hover:bg-primary-darker hover:bg-gtahidiPurple rounded-lg text-sm px-4 py-3 text-center "
+            className={`text-white font-semibold bg-primary-dark hover:bg-primary-darker hover:bg-gtahidiPurple rounded-lg text-sm px-4 py-3 text-center ${activated ? 'block': 'opacity-0 scale-0'}`}
           >
             <a href="/dashboard">Get started</a>
           </button>
@@ -106,14 +107,14 @@ export const Nav = () => {
                 Pricing
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="/shop"
                 className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
               >
                 Shop
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="/blog"
