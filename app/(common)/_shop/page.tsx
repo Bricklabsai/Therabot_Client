@@ -19,7 +19,7 @@ const PRODUCTS: Product[] = [
     name: "T-shirt",
     slug: "t-shirt",
     price: 700,
-    image: "/tshirt.webp",
+    image: "/t-shirt.jpg",
     inventory: 8,
     categoryName: "wear",
     categorySlug: "wear",
@@ -77,7 +77,7 @@ export default function Page() {
                     <p>
                       {new Intl.NumberFormat("en-US", {
                         style: "currency",
-                        currency: "USD",
+                        currency: "KES",
                       }).format(product.price)}
                     </p>
                   </div>
