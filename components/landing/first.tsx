@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function First() {
   return (
-    <section className="bg-white relative grid grid-cols-12 py-10 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
+    <section className="bg-white min-h-screen items-center relative grid grid-cols-12 py-10 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
       {/* <div className="absolute top-0 bottom-[20%] overflow-hidden rounded-bl-[350px] hidden lg:block z-[10] right-0">
         <Image
           width={700}
@@ -18,7 +18,7 @@ export default function First() {
         />
       </div> */}
 
-      <div className="py-8 duration-[600ms] col-span-12 lg:col-span-7 fade-in-100 px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative">
+      <div className="py-8 duration-[600ms] col-span-12 lg:col-span-7 h-full fade-in-100 px-6 sm:px-4 sm:mx-12 max-w-screen-xl text-center md:text-left lg:py-16 z-10 relative">
         <div className="lg:hidden">
           <br></br>
         </div>
@@ -81,7 +81,7 @@ export default function First() {
          
         </div>
       </div>
-      <div className="hidden col-span-5 lg:flex justify-start items-center z-[10]">
+      <div className="hidden col-span-5 h-full lg:flex justify-start items-center z-[10]">
         <Image
           width={500}
           height={300}
