@@ -27,7 +27,7 @@ export default async function Post({ params }: Params) {
         <div className="flex flex-row gap-4">
           {["test1", "AI"].map((tag: any) => (
             <p key={tag} className="tag">
-              <p>#{tag}</p>
+              #{tag}
             </p>
           ))}
         </div>
