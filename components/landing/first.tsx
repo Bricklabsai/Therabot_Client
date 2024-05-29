@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function First() {
   return (
-    <section className="bg-white border-2 relative border-red-600 items-center bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
+    <section className="bg-white  relative items-center bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
       {/* <div className="absolute top-0 bottom-[20%] overflow-hidden rounded-bl-[350px] hidden lg:block z-[10] right-0">
         <Image
           width={700}
@@ -17,14 +17,14 @@ export default function First() {
           alt=""
         />
       </div> */}
-      <div className="grid grid-cols-12 max-w-[800px] mx-auto pb-10 pt-20 w-full">
-        <div className="py-8 duration-[600ms] border col-span-12 lg:col-span-6 h-full fade-in-100 text-center md:text-left lg:py-16 z-10 relative">
+      <div className="container px-6 lg:px-20 grid grid-cols-12 mx-auto pb-10 pt-20 w-full">
+        <div className="py-8 duration-[600ms] col-span-12 lg:col-span-6 h-full fade-in-100 text-center md:text-left lg:py-16 z-10 relative">
           <div className="lg:hidden">
             <br></br>
           </div>
           <a
             href="https://shorturl.at/aFY78"
-            className="inline-flex mt-4 sm:mt-0 border justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-violet-700 bg-violet-100 rounded-full dark:bg-violet-900 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-800"
+            className="inline-flex mt-4 sm:mt-0 justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-violet-700 bg-violet-100 rounded-full dark:bg-violet-900 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-800"
           >
             <span className="text-xs bg-secondary-dark rounded-full text-white px-4 py-1.5 me-3">
               New
@@ -83,12 +83,12 @@ export default function First() {
             </Button>
           </div>
         </div>
-        <div className="hidden border-2 border-blue-700 col-span-6 h-full lg:flex justify-start items-center z-[10]">
+        <div className="hidden col-span-6 p-8 h-full lg:flex justify-start items-center z-[10]">
           <Image
             width={500}
             height={300}
             src="/Groupchatbot.svg"
-            className="object-contain h-full w-full"
+            className="object-contain h-full w-4/5 brightness-[.9]"
             alt=""
           />
         </div>

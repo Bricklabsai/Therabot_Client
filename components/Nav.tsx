@@ -33,9 +33,9 @@ export const Nav = () => {
           activated
             ? "bg-white border-gray-200"
             : "bg-transparent border-transparent"
-        } border-b fixed max-h-20 top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-20 start-0 `}
+        } border-b  fixed max-h-20 top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-20 start-0 `}
       >
-        <div className="flex flex-wrap items-center justify-between mx-auto px-4 lg:px-8 max-w-[100vw]  py-2">
+        <div className="flex container flex-wrap items-center justify-between mx-auto px-4 lg:px-8 py-2">
           <a
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
