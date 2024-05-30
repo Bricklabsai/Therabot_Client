@@ -33,7 +33,7 @@ export const Nav = () => {
           activated
             ? "sm:backdrop-blur-lg bg-white sm:bg-transparent"
             : "bg-transparent border-transparent"
-        }  fixed max-h-20 top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-20 start-0 `}
+        }  fixed max-h-20 top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-[1000] start-0 `}
       >
         <div className="flex container flex-wrap items-center justify-between mx-auto px-6 lg:px-20 py-2">
           <a
