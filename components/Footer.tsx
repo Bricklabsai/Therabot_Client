@@ -4,6 +4,8 @@
 import React from "react";
 import logo from "@/public/assets/therabot_removed.png";
 import playBanner from "@/public/get_on_google.png";
+import Link from 'next/link';
+
 
 import Image from "next/image";
 
@@ -51,29 +53,29 @@ const Footer: React.FC = () => {
             <br />
             <ul className="text-gray-500 dark:text-gray-400 flex flex-col gap-3 font-medium">
               <li className="">
-                <a href="/pricing" className="hover:underline">
+                <Link href="/pricing" className="hover:underline">
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/shop" className="hover:underline">
+                <Link href="/shop" className="hover:underline">
                   Shop
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/blog" className="hover:underline">
+                <Link href="/blog" className="hover:underline">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="hover:underline">
+                <Link href="/contact" className="hover:underline">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="hover:underline">
+                <Link href="/about" className="hover:underline">
                   About
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -85,19 +87,19 @@ const Footer: React.FC = () => {
             <br />
             <ul className="text-gray-500 dark:text-gray-400 font-medium flex flex-col gap-3">
               <li className="">
-                <a href="/TermsConditions" className="hover:underline">
+                <Link href="/TermsConditions" className="hover:underline">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/TermsConditions" className="hover:underline">
+                <Link href="/terms" className="hover:underline">
                   Terms &amp; Conditions
-                </a>
+                </Link>
               </li>
               <li className="">
-                <a href="/TermsConditions" className="hover:underline">
+                <Link href="/TermsConditions" className="hover:underline">
                   Cookie Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
