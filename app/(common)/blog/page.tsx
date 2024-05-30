@@ -61,7 +61,7 @@ function page() {
                     />
                     <div>
                       <h5 className="text-sm text-gray-800 ">
-                        By Kibet Ismael
+                        By {post.author}
                       </h5>
                     </div>
                   </div>

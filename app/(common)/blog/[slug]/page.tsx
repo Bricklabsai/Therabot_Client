@@ -25,7 +25,8 @@ export default async function Post({ params }: Params) {
         <div className="blob w-full h-[510px] md:h-[650px] absolute top-0 left-0 -z-10 bg-opacity-60 bg-gradient-to-b from-primary-light to-white"></div>
         <br />
         <div className="flex flex-row gap-4">
-          {["test1", "AI"].map((tag: any) => (
+          {/** TODO: integrate tags to markdown files */}
+          {["Mental Health", "Discourse"].map((tag: any) => (
             <p key={tag} className="tag">
               #{tag}
             </p>
@@ -57,7 +58,7 @@ export default async function Post({ params }: Params) {
                   alt="image of author"
                 />
               </div>
-              <p className="font-semibold">Kibet Ismael</p>
+              <p className="font-semibold">{post.author}</p>
             </div>
             <br />
             <div className="hidden md:static">
