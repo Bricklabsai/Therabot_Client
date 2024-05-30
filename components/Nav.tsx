@@ -31,11 +31,11 @@ export const Nav = () => {
       <nav
         className={`${
           activated
-            ? "bg-white border-gray-200"
+            ? "sm:backdrop-blur-lg bg-white sm:bg-transparent"
             : "bg-transparent border-transparent"
-        } border-b  fixed max-h-20 top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-20 start-0 `}
+        }  fixed max-h-20 top-0 w-full transition-colors ease-in duration-200 text-gray-900  z-20 start-0 `}
       >
-        <div className="flex container flex-wrap items-center justify-between mx-auto px-4 lg:px-8 py-2">
+        <div className="flex container flex-wrap items-center justify-between mx-auto px-6 lg:px-20 py-2">
           <a
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -52,7 +52,8 @@ export const Nav = () => {
             </span>
           </a>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <div className={`${activated ? "max-md:opacity-0 max-md:scale-0 md:block" : "opacity-0 scale-0"}`}>
+          {/* className={`${activated ? "max-md:opacity-0 max-md:scale-0 md:block" : "opacity-0 scale-0"}`} */}
+            <div className={`hidden lg:block`}>
               <button
                 type="button"
                 className={`text-black relative after:bg-primary-darker button-slice overflow-hidden flex gap-2 items-center font-semibold duration-200 hover:text-white border-2 border-primary-darker text-sm px-4 py-3 text-center `}
@@ -75,7 +76,7 @@ export const Nav = () => {
               onClick={toggleMenu}
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-sticky"
               aria-expanded="false"
             >
@@ -108,7 +109,7 @@ export const Nav = () => {
                 isMenuOpen
                   ? "scale-1 opacity-100"
                   : "max-lg:scale-0 max-lg:opacity-100"
-              } transition-transform origin-top-right duration-200 flex flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white`}
+              } transition-transform origin-top-right duration-200 flex text-lg flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-transparent`}
             >
               <li>
                 <a

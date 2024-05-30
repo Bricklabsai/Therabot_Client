@@ -21,6 +21,9 @@ const config: Config = {
         'primary-darker': '#703270',
         'secondary-light': '#5D675B',
         'secondary-dark': '#2b302a',
+        'secondary': "#D6BA73",
+        "lightish": "#F5E0B7",
+        "grayish": "#5D675B",
       },
       keyframes: {
         "accordion-down": {

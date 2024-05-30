@@ -17,7 +17,15 @@ export default function First() {
           alt=""
         />
       </div> */}
-      <div className="container px-6 lg:px-20 grid grid-cols-12 mx-auto pb-10 pt-20 w-full">
+      {/* <div
+        className="relative left-[calc(50%)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-orange-400 to-primary-muted opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        style={{
+          clipPath:
+            "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+        }}
+      ></div> */}
+
+      <div className="container px-6 lg:px-20 grid grid-cols-12 mx-auto pb-10 pt-12 sm:pt-20 w-full">
         <div className="py-8 duration-[600ms] col-span-12 lg:col-span-6 h-full fade-in-100 text-center md:text-left lg:py-16 z-10 relative">
           <div className="lg:hidden">
             <br></br>
@@ -51,14 +59,14 @@ export default function First() {
           </a>
           <br />
           <div className="min-[250px] z-[50] max-w-[600px] w-full">
-            <h1 className="mb-4 hidden md:block text-4xl text-left font-extrabold tracking-normal leading-[50px] text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
+            <h1 className="mb-4 hidden md:block text-4xl text-neutral-900 text-left font-extrabold tracking-normal leading-[50px] md:text-5xl lg:text-6xl dark:text-white">
               Your Compassionate Digital Partner
             </h1>
             <h1 className="mb-4 md:hidden text-5xl text-left font-extrabold tracking-normal leading-[80px] text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
               Never Walk Alone
             </h1>
             <br />
-            <p className="mb-8 md:mb-1 text-left text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-200">
+            <p className="mb-8 md:mb-1 text-left text-lg font-semibold text-neutral-700 lg:text-xl dark:text-gray-200">
               Life&apos;s journey can be daunting but remember that you
               aren&apos;t alone. Therabot is here to support you, offering
               encouragement, resilience, and hope. Together, we will navigate
@@ -92,9 +100,8 @@ export default function First() {
             alt=""
           />
         </div>
-        
       </div>
-      <div className="bg-gradient-to-b from-primary-light to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
+      <div className="bg-gradient-to-b from-primary-light to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0 backdrop-blur-lg"></div>
     </section>
   );
 }

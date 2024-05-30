@@ -1,14 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Button from "@/components/button";
 import { Metadata } from "next";
 
 import First from "@/components/landing/first";
 import Banner from "@/components/landing/banner";
-import Interests from "@/components/landing/interests";
 import Working from "@/components/landing/working";
-import Services from "@/components/landing/services";
-import About from "@/components/landing/about";
+import HowItWorks from "@/components/landing/howitworks";
 import FAQ from "@/components/landing/faq";
 
 export const metadata: Metadata = {
@@ -23,7 +20,8 @@ function page() {
       <First />
       <Banner />
       {/* <Interests /> */}
-      <Working />
+      <HowItWorks />
+      
       {/* <Services /> */}
       {/* <About /> */}
       <FAQ preview={true} />
