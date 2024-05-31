@@ -52,6 +52,7 @@ const WORKING: WorkingProps[] = [
     border: "border-blue-400"
   },
 ];
+
 export default function HowItWorks() {
   return (
     <div className="flex flex-col items-center py-10 px-2">

@@ -4,9 +4,9 @@ import { Metadata } from "next";
 
 import First from "@/components/landing/first";
 import Banner from "@/components/landing/banner";
-import Working from "@/components/landing/working";
 import HowItWorks from "@/components/landing/howitworks";
 import FAQ from "@/components/landing/faq";
+import ChatBanner from "@/components/landing/chatBanner";
 
 export const metadata: Metadata = {
   title: "Therabot: Your Compassionate Digital Partner",
@@ -25,6 +25,7 @@ function page() {
       {/* <Services /> */}
       {/* <About /> */}
       <FAQ preview={true} />
+      <ChatBanner />
     </div>
   );
 }

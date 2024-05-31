@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "@/public/assets/therabot_removed.png";
 import playBanner from "@/public/get_on_google.png";
 import Link from 'next/link';
@@ -10,6 +10,7 @@ import Link from 'next/link';
 import Image from "next/image";
 
 const Footer: React.FC = () => {
+
   return (
     <footer className="bg-white py-8 dark:bg-gray-900 text-black">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -48,7 +49,7 @@ const Footer: React.FC = () => {
 
           <div className="col-span-12 md:col-span-4 p-2">
             <h2 className="text-lg font-semibold text-gray-900 uppercase dark:text-white">
-              Features
+              Useful Links
             </h2>
             <br />
             <ul className="text-gray-500 dark:text-gray-400 flex flex-col gap-3 font-medium">
@@ -57,10 +58,10 @@ const Footer: React.FC = () => {
                   Pricing
                 </Link>
               </li>
-              <li>
-                <Link href="/shop" className="hover:underline">
-                  Shop
-                </Link>
+              <li className="">
+                <a href="https://shorturl.at/aFY78" className="hover:underline">
+                  Whatsapp
+                </a>
               </li>
               <li>
                 <Link href="/blog" className="hover:underline">
@@ -80,7 +81,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-12 md:col-span-4 p-2">
             <h2 className="text-lg font-semibold text-gray-900 uppercase dark:text-white">
               Legal
             </h2>
@@ -107,11 +108,9 @@ const Footer: React.FC = () => {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2024
-            <a href="#" className="hover:underline ml-1">
-              Bricklabsai™
-            </a>
-            . Made with ❤️ by Bricklabsai .
+          Bricklabsai™ © {new Date().getFullYear()} All rights reserved.
+           
+            {/* . Made with ❤️ by Bricklabsai . */}
           </span>
           <div className="flex mt-4 px-8 py-2 items-center justify-center sm:mt-0">
             {/* <a
