@@ -2,7 +2,8 @@ import Button from "../button";
 export default function ChatBanner() {
   return (
     <>
-      <div className="container px-6 py-4 lg:px-20">
+    <div className="flex flex-col items-center">
+      <div className="container mx-auto px-6 w-full py-8 lg:px-20 sm:mx-24 text-center lg:py-16 z-10 relative">
         <div className="w-full flex gap-2 justify-between items-center py-8 px-4 md:px-20 rounded-lg bg-gradient-to-r from-primary-dark via-primary-lighter to-secondary">
             <h2 className="text-lg md:text-3xl font-bold tracking-wide text-white">Start Chatting Now for Free</h2>
             <Button
@@ -24,6 +25,7 @@ export default function ChatBanner() {
               </a>
             </Button>
         </div>
+      </div>
       </div>
     </>
   );

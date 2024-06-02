@@ -88,6 +88,7 @@ export default function First() {
                 the path ahead.
               </p>
               <br />
+              
               <Button
                 asChild={true}
                 className="w-fit button-slice relative after:bg-primary-darker translate-y-[1px] overflow-hidden text-black transition-colors origin-bottom-left ease-in duration-200 hover:text-white border-2 border-primary-darker py-3 px-6 shadow-gray-400 max-sm:py-4 max-sm:px-12 flex gap-4 bg-transparent"
