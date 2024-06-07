@@ -30,9 +30,7 @@ const Footer: React.FC = () => {
             </a>
             <div className="p-2">
               <p className="leadin-4">
-                We are a psychotherapy practice dedicated to providing
-                compassionate and effective mental health care to individuals,
-                couples, and families.
+              Therabot is here to support you, offering encouragement, resilience, and hope. Never walk alone.
               </p>
             </div>
             <br />
@@ -53,10 +51,15 @@ const Footer: React.FC = () => {
             </h2>
             <br />
             <ul className="text-gray-500 dark:text-gray-400 flex flex-col gap-3 font-medium">
-              <li className="">
+              {/* <li className="">
                 <Link href="/pricing" className="hover:underline">
                   Pricing
                 </Link>
+              </li> */}
+               <li className="">
+                <a href="/" className="hover:underline">
+                  Home
+                </a>
               </li>
               <li className="">
                 <a href="https://shorturl.at/aFY78" className="hover:underline">
