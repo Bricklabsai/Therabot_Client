@@ -128,7 +128,7 @@ export const Nav = () => {
                 </a>
               </li>
 
-              <li>
+              {/* <li>
                 <a
                   onClick={() => sendEvent("pricing_link")}
                   href="/pricing"
@@ -136,7 +136,7 @@ export const Nav = () => {
                 >
                   Pricing
                 </a>
-              </li>
+              </li> */}
               {/* <li>
               <a
                 href="/shop"
@@ -152,6 +152,14 @@ export const Nav = () => {
                   className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
                 >
                   Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/about"
+                  className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
+                >
+                  About
                 </a>
               </li>
               <li>
