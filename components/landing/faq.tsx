@@ -13,9 +13,8 @@ export default function FAQ({ preview = false }: { preview?: boolean }) {
     faqs = FAQS.slice(0, 6);
   }
   return (
-    <>
-      <section className="py-6 bg-white text-black">
-        <div className="py-8 px-4 sm:mx-24 max-w-screen-xl text-center lg:py-16 z-10 relative">
+    <div className="flex flex-col items-center">
+        <div className="container mx-auto px-6 py-8 lg:px-20  sm:mx-24 text-center lg:py-16 z-10 relative">
           <div className="p-4 text-xl font-semibold">
             <h2>Frequently Asked Questions</h2>
           </div>
@@ -59,7 +58,8 @@ export default function FAQ({ preview = false }: { preview?: boolean }) {
             </>
           )}
         </div>
-      </section>
-    </>
+        </div>
+
+
   );
 }
