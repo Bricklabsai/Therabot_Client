@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import { BASE_URL } from "@/global.config";
+import TelemetryProvider from "@/components/TelemetryProvider";
 
 const inter = Raleway({ subsets: ["latin"] });
 
@@ -56,6 +57,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head />
       <body className={`${inter.className} w-screen overflow-x-hidden`}>
+        <TelemetryProvider />
         {children}
       </body>
     </html>
