@@ -134,7 +134,7 @@ export default function First() {
             <motion.img
               width={500}
               height={300}
-              src="/Groupchatbot.svg"
+              src="/Groupchatbot-2.svg"
               className="object-contain h-full w-4/5 brightness-[.9]"
               alt=""
               initial={{ scale: 1.5, opacity: 0 }}
