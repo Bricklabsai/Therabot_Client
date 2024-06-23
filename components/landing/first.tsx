@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function First() {
   const ref = useRef(null);
@@ -39,9 +40,12 @@ export default function First() {
         }}
       ></div> */}
 
-      <div >
+      <div>
         <div className="container px-6 lg:px-20 grid grid-cols-12 mx-auto pb-10 pt-12 sm:pt-20 w-full">
-          <div ref={ref} className="py-8 duration-[600ms] col-span-12 lg:col-span-6 h-full fade-in-100 text-center md:text-left lg:py-16 z-10 relative">
+          <div
+            ref={ref}
+            className="py-8 duration-[600ms] col-span-12 lg:col-span-6 h-full fade-in-100 text-center md:text-left lg:py-16 z-10 relative"
+          >
             <div className="lg:hidden">
               <br></br>
             </div>
@@ -88,7 +92,7 @@ export default function First() {
                 the path ahead.
               </p>
               <br />
-              
+
               <Button
                 asChild={true}
                 className="w-fit button-slice relative after:bg-primary-darker translate-y-[1px] overflow-hidden text-black transition-colors origin-bottom-left ease-in duration-200 hover:text-white border-2 border-primary-darker py-3 px-6 shadow-gray-400 max-sm:py-4 max-sm:px-12 flex gap-4 bg-transparent"
@@ -108,12 +112,15 @@ export default function First() {
             </div>
           </div>
           <div className="hidden col-span-6 p-8 h-full lg:flex justify-start items-center z-[10]">
-            <Image
+            <motion.img
               width={500}
               height={300}
               src="/Groupchatbot.svg"
               className="object-contain h-full w-4/5 brightness-[.9]"
               alt=""
+              initial={{scale: 1.5, opacity: 0}}
+              animate={{scale: 1, opacity: 1}}
+              transition={{duration: 0.75}}
             />
           </div>
         </div>

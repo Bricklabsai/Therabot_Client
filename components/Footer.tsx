@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import logo from "@/public/assets/therabot_removed.png";
 import playBanner from "@/public/get_on_google.png";
 import Link from 'next/link';

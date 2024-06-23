@@ -124,23 +124,6 @@ export const Nav = () => {
                   Home
                 </a>
               </li>
-
-              {/* <li>
-                <a
-                  href="/pricing"
-                  className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
-                >
-                  Pricing
-                </a>
-              </li> */}
-              {/* <li>
-              <a
-                href="/shop"
-                className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
-              >
-                Shop
-              </a>
-            </li> */}
               <li>
                 <a
                   href="/blog"
