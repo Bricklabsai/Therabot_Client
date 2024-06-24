@@ -1,4 +1,4 @@
-import {Slot} from '@radix-ui/react-slot'
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -6,6 +6,7 @@ interface Props {
   className?: string;
   asChild?: boolean;
   onClick?: () => void;
+  [key: string]: any;
 }
 
 /**
@@ -15,14 +16,21 @@ interface Props {
  * @param onClick {() => void} onclick function
  * @returns JSX.Element
  */
-export default function Button(props: Props) {
-  const Parent = (props.asChild === true) ? Slot : 'button'
+export default function Button({
+  children,
+  className,
+  asChild,
+  onClick,
+  ...props
+}: Props) {
+  const Parent = asChild === true ? Slot : "button";
   return (
     <Parent
-      className={cn("bg-secondary py-2 px-4 outline-transparent", props.className)}
-      onClick={props.onClick}
+      {...props}
+      className={cn("bg-secondary py-2 px-4 outline-transparent", className)}
+      onClick={onClick}
     >
-      {props.children}
+      {children}
     </Parent>
   );
 }

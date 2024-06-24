@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { heroTextAnimation } from "./lib/animation";
 
 const config: Config = {
   content: [
@@ -34,10 +35,12 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        [heroTextAnimation.name]: heroTextAnimation.keyframes,
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        [heroTextAnimation.name]: `${heroTextAnimation.name} 1.3s`
       },
     },
   },

@@ -6,9 +6,12 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { motion } from "framer-motion";
+import { heroTextAnimation } from "@/lib/animation";
 
 export default function First() {
   const ref = useRef(null);
+  let animationStep = 0;
   useGSAP(() => {
     let textAnimation = gsap.timeline();
 
@@ -20,6 +23,7 @@ export default function First() {
       },
     });
   }, []);
+
   return (
     <section className="bg-white relative items-center bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
       {/* <div className="absolute top-0 bottom-[20%] overflow-hidden rounded-bl-[350px] hidden lg:block z-[10] right-0">
@@ -39,15 +43,19 @@ export default function First() {
         }}
       ></div> */}
 
-      <div >
+      <div>
         <div className="container px-6 lg:px-20 grid grid-cols-12 mx-auto pb-10 pt-12 sm:pt-20 w-full">
-          <div ref={ref} className="py-8 duration-[600ms] col-span-12 lg:col-span-6 h-full fade-in-100 text-center md:text-left lg:py-16 z-10 relative">
+          <div
+            // ref={ref}
+            className="py-8 duration-[600ms] col-span-12 lg:col-span-6 h-full fade-in-100 text-center md:text-left lg:py-16 z-10 relative"
+          >
             <div className="lg:hidden">
               <br></br>
             </div>
             <a
               href="https://shorturl.at/aFY78"
-              className="inline-flex mt-4 sm:mt-0 justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-violet-700 bg-violet-100 rounded-full dark:bg-violet-900 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-800"
+              style={heroTextAnimation.getVariables(2)}
+              className="animate-hero-text-reveal inline-flex mt-4 sm:mt-0 justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-violet-700 bg-violet-100 rounded-full dark:bg-violet-900 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-800"
             >
               <span className="text-xs bg-secondary-dark rounded-full text-white px-4 py-1.5 me-3">
                 New
@@ -74,21 +82,35 @@ export default function First() {
             </a>
             <br />
             <div className="min-[250px] z-[50] max-w-[600px] w-full">
-              <h1 className="mb-4 hidden md:block text-4xl text-neutral-900 text-left font-extrabold tracking-normal leading-[50px] md:text-5xl lg:text-6xl dark:text-white">
+              <h1
+                className="animate-hero-text-reveal mb-4 hidden md:block text-4xl animate-text-hero-text-reveal text-neutral-900 text-left font-extrabold tracking-normal leading-[50px] md:text-5xl lg:text-6xl dark:text-white"
+                style={heroTextAnimation.getVariables(1)}
+              >
                 Your Compassionate Digital Partner
               </h1>
-              <h1 className="mb-4 md:hidden text-5xl text-left font-extrabold tracking-normal leading-[80px] text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
+              <h1
+                style={heroTextAnimation.getVariables(1)}
+                className="animate-hero-text-reveal mb-4 md:hidden text-5xl text-left font-extrabold tracking-normal leading-[80px] text-gray-800 md:text-5xl lg:text-6xl dark:text-white"
+              >
                 Never Walk Alone
               </h1>
               <br />
-              <p className="mb-8 md:mb-1 text-left text-lg font-semibold text-neutral-700 lg:text-xl dark:text-gray-200">
+              <p
+                style={heroTextAnimation.getVariables(3)}
+                className="animate-hero-text-reveal mb-8 md:mb-1 text-left text-lg font-semibold text-neutral-700 lg:text-xl dark:text-gray-200"
+              >
                 Life&apos;s journey can be daunting but remember that you
                 aren&apos;t alone. Therabot is here to support you, offering
                 encouragement, resilience, and hope. Together, we will navigate
                 the path ahead.
               </p>
+
               <br />
-              
+
+              <div
+              style={heroTextAnimation.getVariables(3)}
+              className="animate-hero-text-reveal"
+              >
               <Button
                 asChild={true}
                 className="w-fit button-slice relative after:bg-primary-darker translate-y-[1px] overflow-hidden text-black transition-colors origin-bottom-left ease-in duration-200 hover:text-white border-2 border-primary-darker py-3 px-6 shadow-gray-400 max-sm:py-4 max-sm:px-12 flex gap-4 bg-transparent"
@@ -105,15 +127,19 @@ export default function First() {
                   <p className="uppercase font-medium">Chat NOW</p>
                 </a>
               </Button>
+              </div>
             </div>
           </div>
           <div className="hidden col-span-6 p-8 h-full lg:flex justify-start items-center z-[10]">
-            <Image
+            <motion.img
               width={500}
               height={300}
-              src="/Groupchatbot.svg"
+              src="/Groupchatbot-2.svg"
               className="object-contain h-full w-4/5 brightness-[.9]"
               alt=""
+              initial={{ scale: 1.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.75 }}
             />
           </div>
         </div>
