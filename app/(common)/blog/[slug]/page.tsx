@@ -81,14 +81,14 @@ export default async function Post({ params }: Params) {
   );
 }
 
-export async function generateStaticParams() {
-  const posts = await getPosts();
+// export async function generateStaticParams() {
+//   const posts = await getPosts();
 
-  if (!posts || posts.data == undefined) {
-    return [];
-  }
+//   if (!posts || posts.data == undefined) {
+//     return [];
+//   }
 
-  return posts?.data.map((post) => ({
-    slug: post.attributes.slug,
-  }));
-}
+//   return posts?.data.map((post) => ({
+//     slug: post.attributes.slug,
+//   }));
+// }
