@@ -25,7 +25,8 @@ export default function First() {
   }, []);
 
   return (
-    <section className="bg-white relative items-center bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] ">
+    //bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')]
+    <section className="bg-white relative items-center  ">
       {/* <div className="absolute top-0 bottom-[20%] overflow-hidden rounded-bl-[350px] hidden lg:block z-[10] right-0">
         <Image
           width={700}
@@ -130,6 +131,7 @@ export default function First() {
               </div>
             </div>
           </div>
+          {/*order-first lg:order-last */}
           <div className="hidden col-span-6 p-8 h-full lg:flex justify-start items-center z-[10]">
             <motion.img
               width={500}
@@ -143,7 +145,7 @@ export default function First() {
             />
           </div>
         </div>
-        <div className="bg-gradient-to-b from-primary-light to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0 backdrop-blur-lg"></div>
+        {/* <div className="bg-gradient-to-b from-primary-light to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0 backdrop-blur-lg"></div> */}
       </div>
     </section>
   );
