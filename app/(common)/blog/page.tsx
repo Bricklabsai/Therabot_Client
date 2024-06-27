@@ -3,9 +3,10 @@ import React from "react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getPosts } from "@/lib/blog/getPost";
 import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { unWrapPromise } from "@/lib/unwrap";
+import axios from "axios";
+import { StrapiBase, PostSummary } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog - Therabot",
@@ -17,13 +18,8 @@ export const metadata: Metadata = {
   },
 };
 
-async function page({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
+async function page() {
   // const allPosts = getAllPosts();
-  console.log(searchParams)
   const posts = await getPosts();
 
   return (
@@ -88,3 +84,27 @@ async function page({
 }
 
 export default page;
+
+const getPosts = async () => {
+  if (process.env.STRAPI_URL === null) {
+    Error("STRAPI_URL not defined.");
+    return null;
+  }
+  // <StrapiBase<PostSummary[]>>
+  try {
+    const res = await fetch(
+      `${process.env.STRAPI_URL}/api/posts?fields[0]=title&fields[1]=excerpt&fields[2]=slug&fields[3]=updatedAt&populate[0]=featuredImage&populate[1]=author&populate[author][populate]=image`,
+      {
+        method: "GET",
+        cache: "no-store",
+        headers: {
+          Authorization: `bearer ${process.env.STRAPI_AUTH_TOKEN}`,
+        },
+      }
+    );
+    return (await res.json()) as StrapiBase<PostSummary[]>;
+  } catch (error: any) {
+    console.error("Error")
+    return null;
+  }
+};
