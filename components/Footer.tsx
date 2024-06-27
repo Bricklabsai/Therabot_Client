@@ -4,13 +4,11 @@
 import React from "react";
 import logo from "@/public/assets/therabot_removed.png";
 import playBanner from "@/public/get_on_google.png";
-import Link from 'next/link';
-
+import Link from "next/link";
 
 import Image from "next/image";
 
 const Footer: React.FC = () => {
-
   return (
     <footer className="bg-white py-8 dark:bg-gray-900 text-black">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -30,7 +28,8 @@ const Footer: React.FC = () => {
             </a>
             <div className="p-2">
               <p className="leadin-4">
-              Therabot is here to support you, offering encouragement, resilience, and hope. Never walk alone.
+                Therabot is here to support you, offering encouragement,
+                resilience, and hope. Never walk alone.
               </p>
             </div>
             <br />
@@ -56,10 +55,10 @@ const Footer: React.FC = () => {
                   Pricing
                 </Link>
               </li> */}
-               <li className="">
-                <a href="/" className="hover:underline">
+              <li className="">
+                <Link href="/" className="hover:underline">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="">
                 <a href="https://shorturl.at/aFY78" className="hover:underline">
@@ -111,8 +110,7 @@ const Footer: React.FC = () => {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          Bricklabsai™ © {new Date().getFullYear()} All rights reserved.
-           
+            Bricklabsai™ © {new Date().getFullYear()} All rights reserved.
             {/* . Made with ❤️ by Bricklabsai . */}
           </span>
           <div className="flex mt-4 px-8 py-2 items-center justify-center sm:mt-0">

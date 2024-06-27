@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "@/public/therabot.svg";
 import Button from "./button";
 import useTelemetry from "@/hooks/useTelemetry";
+import Link from "next/link";
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -118,58 +119,44 @@ export const Nav = () => {
               } transition-transform origin-top-right bg-white duration-200 flex text-lg flex-col items-center p-4 md:p-0 md:px-2 md:py-1 rounded-md md:rounded-full font-medium  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-transparent`}
             >
               <li>
-                <a
+                <Link
                   onClick={() => sendEvent("home_link")}
                   href="/"
                   className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
                   aria-current="page"
+                  prefetch={true}
                 >
                   Home
-                </a>
+                </Link>
               </li>
-
-              {/* <li>
-                <a
-                  onClick={() => sendEvent("pricing_link")}
-                  href="/pricing"
-                  className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
-                >
-                  Pricing
-                </a>
-              </li> */}
-              {/* <li>
-              <a
-                href="/shop"
-                className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
-              >
-                Shop
-              </a>
-            </li> */}
               <li>
-                <a
+                <Link
                   onClick={() => sendEvent("blog_link")}
                   href="/blog"
                   className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
+                  prefetch={true}
                 >
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/about"
                   className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
+                  prefetch={true}
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   onClick={() => sendEvent("contact_link")}
                   href="/contact"
                   className="block py-2 px-6 hover:bg-primary-light hover:bg-opacity-60 rounded-lg md:rounded-full duration-150 ease-in transition-colors"
+                  prefetch={true}
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
