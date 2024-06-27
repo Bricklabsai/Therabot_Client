@@ -7,6 +7,7 @@ import Banner from "@/components/landing/banner";
 import HowItWorks from "@/components/landing/howitworks";
 import FAQ from "@/components/landing/faq";
 import ChatBanner from "@/components/landing/chatBanner";
+import Sponsors from "@/components/landing/sponsors";
 
 export const metadata: Metadata = {
   title: "Therabot: Your Compassionate Digital Partner",
@@ -21,10 +22,11 @@ function page() {
       <Banner />
       {/* <Interests /> */}
       <HowItWorks />
-      
+
       {/* <Services /> */}
       {/* <About /> */}
       <FAQ preview={true} />
+      <Sponsors />
       <ChatBanner />
     </div>
   );
