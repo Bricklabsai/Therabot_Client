@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getPosts } from "@/lib/blog/getPost";
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { unWrapPromise } from "@/lib/unwrap";
 
 export const metadata: Metadata = {
   title: "Blog - Therabot",
@@ -15,8 +17,15 @@ export const metadata: Metadata = {
   },
 };
 
-async function page() {
- // const allPosts = getAllPosts();
+async function page({
+  params,
+  searchParams,
+}: {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  // const allPosts = getAllPosts();
+  console.log(params.slug)
   const posts = await getPosts();
 
   return (
