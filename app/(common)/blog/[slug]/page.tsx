@@ -85,8 +85,9 @@ export async function generateStaticParams() {
   const posts = await getPosts();
 
   if (!posts || posts.data == undefined) {
-    return null;
+    return [];
   }
+
   return posts?.data.map((post) => ({
     slug: post.attributes.slug,
   }));

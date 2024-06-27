@@ -47,9 +47,6 @@ export type Post = {
         title: string;
         excerpt: string;
         // this might be removed
-        visibility?: boolean;
-        // TODO: check the validity of this also
-        readingTime: string | null;
         slug: string;
         createdAt: string,
         updatedAt: string,
