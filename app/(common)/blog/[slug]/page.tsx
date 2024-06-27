@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { PostBody } from "@/components/post";
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getPost, getPosts } from "@/lib/blog/getPost";
 import markdownToHtml from "@/lib/markdowntohtml";
 import { notFound } from "next/navigation";
+
+const STRAPI_URL = process.env.STRAPI_URL;
 
 type Params = {
   params: {
@@ -11,13 +13,14 @@ type Params = {
 };
 
 export default async function Post({ params }: Params) {
-  const post = getPostBySlug(params.slug);
+  const post = await getPost(params.slug);
+  // console.log('post: ', post?.data)
 
   if (!post) {
     return notFound();
   }
 
-  const content = await markdownToHtml(post.content || "");
+  const content = await markdownToHtml(post.data?.attributes.content || "");
 
   return (
     <div className=" py-28 sm:px-10 lg:px-20 lg:py-20 mx-auto">
@@ -25,22 +28,24 @@ export default async function Post({ params }: Params) {
         <div className="blob w-full h-[510px] md:h-[650px] absolute top-0 left-0 -z-10 bg-opacity-60 bg-gradient-to-b from-primary-light to-white"></div>
         <br />
         <div className="flex flex-row gap-4">
-          {/** TODO: integrate tags to markdown files */}
-          {["Mental Health", "Discourse"].map((tag: any) => (
-            <p key={tag} className="tag">
-              #{tag}
-            </p>
-          ))}
+          <p className="tag">
+            #{post.data?.attributes.category.data.attributes.Name}
+          </p>
         </div>
         <br />
-        <h2 className="text-4xl md:text-6xl font-semibold">{post.title}</h2>
+        <h2 className="text-4xl md:text-6xl font-semibold">
+          {post.data?.attributes.title}
+        </h2>
         <br />
         <p className="font-semibold text-normal">
-          {new Date(post.date).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "2-digit",
-          })}
+          {new Date(post.data?.attributes?.updatedAt || "").toLocaleDateString(
+            "en-US",
+            {
+              year: "numeric",
+              month: "long",
+              day: "2-digit",
+            }
+          )}
         </p>
         <br />
 
@@ -53,12 +58,14 @@ export default async function Post({ params }: Params) {
             <div className="flex flex-row py-2 gap-4 items-center">
               <div className="h-10 w-10 rounded-full overflow-hidden border">
                 <img
-                  src="/placeholder.jpg"
+                  src={`${STRAPI_URL}/uploads/identicon_478d86f53a.png`}
                   className="object-contain"
                   alt="image of author"
                 />
               </div>
-              <p className="font-semibold">{post.author}</p>
+              <p className="font-semibold">
+                {post.data?.attributes.author.data.attributes.name}
+              </p>
             </div>
             <br />
             <div className="hidden md:static">
@@ -75,9 +82,12 @@ export default async function Post({ params }: Params) {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = await getPosts();
 
-  return posts.map((post) => ({
-    slug: post.slug,
+  if (!posts || posts.data == undefined) {
+    return null;
+  }
+  return posts?.data.map((post) => ({
+    slug: post.attributes.slug,
   }));
 }
