@@ -14,15 +14,17 @@ export default function FAQ({ preview = false }: { preview?: boolean }) {
   }
   return (
     <div className="flex flex-col items-center">
-        <div className="container mx-auto px-6 py-8 lg:px-20  sm:mx-24 text-center lg:py-16 z-10 relative">
-          <div className="p-4 text-xl font-semibold">
+        <div className="container mx-auto px-6 py-8 lg:px-20 md:w-2/3  sm:mx-24 text-center lg:py-16 z-10 relative">
+          <div className="p-4 text-xl md:text-4xl font-semibold">
             <h2>Frequently Asked Questions</h2>
           </div>
-          <Accordion type="single" collapsible className="flex flex-col gap-2">
+          <br />
+          <br />
+          <Accordion type="single" collapsible className="flex flex-col gap-3">
             {faqs.map((faq: FAQProp) => (
               <div key={faq.title}>
-                <AccordionItem value={faq.title}>
-                  <AccordionTrigger className="font-semibold text-left">
+                <AccordionItem className="py-2 bg-purple-50 rounded-md px-4" value={faq.title}>
+                  <AccordionTrigger className="font-semibold hover:no-underline text-left">
                     {faq.title}
                   </AccordionTrigger>
                   <AccordionContent className="text-left text-neutral-800 text-base">
