@@ -18,14 +18,12 @@ export const metadata: Metadata = {
 };
 
 async function page({
-  params,
   searchParams,
 }: {
-  params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
   // const allPosts = getAllPosts();
-  console.log(params.slug)
+  console.log(searchParams)
   const posts = await getPosts();
 
   return (
