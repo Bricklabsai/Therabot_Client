@@ -80,7 +80,6 @@ const Footer: React.FC = () => {
                   Home
                 </Link>
               </li>
-              
               <li>
                 <Link href="/blog" className="hover:underline">
                   Blog

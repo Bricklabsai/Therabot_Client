@@ -138,7 +138,8 @@ function MobileMenu() {
       <button
         ref={menuButtonRef}
         className="focus:border-primary-dark hover:border-primary-dark border-neutral-500 text-black dark:text-white inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition focus:outline-none"
-        popoverTarget="mobile-menu"
+        // @ts-expect-error
+        popovertarget="mobile-menu"
       >
         <svg
           width="32"
@@ -157,7 +158,7 @@ function MobileMenu() {
         ref={popoverRef}
         popover=""
         onToggle={() => window.scrollTo(0, 0)}
-        className="fixed bottom-0 left-0 right-0 top-[100px] m-0 h-[calc(100svh-100px)] w-full"
+        className="fixed bottom-0 left-0 right-0 top-[100px] m-0 h-[calc(100svh-98px)] w-full"
       >
         <div className="bg-white dark:bg-tbdark flex h-full flex-col overflow-y-scroll border-t border-gray-200 pb-12 dark:border-gray-600">
           {MOBILE_LINKS.map((link) => (

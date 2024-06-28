@@ -27,7 +27,7 @@ export default function FAQ({ preview = false }: { preview?: boolean }) {
                   <AccordionTrigger className="font-semibold hover:no-underline text-left">
                     {faq.title}
                   </AccordionTrigger>
-                  <AccordionContent className="text-left text-neutral-800 bg-gray-50 dark:text-gray-50 dark:bg-neutral-800 text-base">
+                  <AccordionContent className="text-left text-neutral-800 bg-purple-50 dark:text-gray-50 dark:bg-neutral-800 text-base">
                     {faq.description}
                   </AccordionContent>
                 </AccordionItem>
