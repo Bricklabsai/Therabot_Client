@@ -1,15 +1,14 @@
 export default function Page() {
   return (
     <>
-      <div className="bg-white py-20 ">
-        <div className="container px-6 py-8 mx-auto">
-          <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
+      <div className="py-20 dark:text-white">
+        <div className="container px-6 py-8 mx-auto lg:px-20">
+          <h1 className="text-3xl font-semibold text-center  capitalize lg:text-3xl ">
             About
           </h1>
-
           <br />
           <div>
-            <h1 className="text-xl font-semibold text-left text-gray-800 capitalize lg:text-3xl ">
+            <h1 className="text-xl font-semibold text-left  capitalize lg:text-3xl ">
               Our Mission
             </h1>
             <br />
@@ -23,7 +22,7 @@ export default function Page() {
 
           <br />
           <div>
-            <h1 className="text-xl font-semibold text-left text-gray-800 capitalize lg:text-3xl ">
+            <h1 className="text-xl font-semibold text-left  capitalize lg:text-3xl ">
               Our Approach
             </h1>
             <br />
@@ -58,11 +57,11 @@ export default function Page() {
 
           <br />
           <div>
-            <h1 className="text-xl font-semibold text-left text-gray-800 capitalize lg:text-3xl ">
+            <h1 className="text-xl font-semibold text-left  capitalize lg:text-3xl ">
               Our Core Values
             </h1>
             <br />
-            {/* <h1 className="text-normal font-semibold text-left text-gray-800 capitalize lg:text-3xl ">
+            {/* <h1 className="text-normal font-semibold text-left  capitalize lg:text-3xl ">
               Empowering Communities Through Innovation
             </h1>
             <br /> */}
@@ -115,7 +114,7 @@ export default function Page() {
           <br />
           {/*Core Values */}
           <div>
-            <h1 className="text-xl font-semibold text-left text-gray-800 capitalize lg:text-3xl ">
+            <h1 className="text-xl font-semibold text-left  capitalize lg:text-3xl ">
               Our Core Values
             </h1>
             <br />
@@ -174,7 +173,7 @@ export default function Page() {
           <br />
           {/* Our culture */}
           <div>
-            <h1 className="text-xl font-semibold text-left text-gray-800 capitalize lg:text-3xl ">
+            <h1 className="text-xl font-semibold text-left  capitalize lg:text-3xl ">
               Our Culture: Innovate, Collaborate, Thrive
             </h1>
             <br />
@@ -237,7 +236,7 @@ export default function Page() {
           <br />
           {/* Our social resposibility */}
           <div>
-            <h1 className="text-xl font-semibold text-left text-gray-800 capitalize lg:text-3xl ">
+            <h1 className="text-xl font-semibold text-left  capitalize lg:text-3xl ">
               Our Social Responsibility
             </h1>
             <br />

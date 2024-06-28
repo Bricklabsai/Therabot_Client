@@ -7,7 +7,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
+  darkMode: ["class"],
   theme: {
     extend: {
       backgroundImage: {
@@ -25,7 +25,9 @@ const config: Config = {
         'secondary': "#D6BA73",
         "lightish": "#F5E0B7",
         "grayish": "#5D675B",
+        "tbdark": "#111214",
       },
+      // #111214
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

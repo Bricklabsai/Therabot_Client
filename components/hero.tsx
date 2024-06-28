@@ -37,7 +37,7 @@ export default function Hero({
   }, []);
   return (
     <>
-      <section className="bg-white  h-screen 2xl:h-full relative items-center">
+      <section className="h-screen 2xl:h-full relative items-center">
         <div>
           <div className="container px-6 lg:px-20 grid grid-cols-12 mx-auto pb-10 pt-12 sm:pt-20 w-full">
             <div
@@ -72,7 +72,7 @@ export default function Hero({
                 >
                   <Button
                     asChild={true}
-                    className="w-fit button-slice relative after:bg-primary-darker translate-y-[1px] overflow-hidden text-black transition-colors origin-bottom-left ease-in duration-200 hover:text-white border-2 border-primary-darker py-3 px-6 shadow-gray-400 max-sm:py-4 max-sm:px-12 flex gap-4 bg-transparent"
+                    className="w-fit button-slice relative after:bg-primary-darker translate-y-[1px] overflow-hidden text-black dark:text-white transition-colors origin-bottom-left ease-in duration-200 hover:text-white border-2 border-primary-darker py-3 px-6 shadow-gray-400 max-sm:py-4 max-sm:px-12 flex gap-4 bg-transparent"
                   >
                     <a href={buttonLink} className="p-0 m-0">
                       {buttonIcon}

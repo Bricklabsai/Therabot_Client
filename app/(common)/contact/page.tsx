@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Metadata } from "next";
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: "Contact Us - Therabot",
@@ -13,10 +14,10 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <div className="max-w-[85rem] bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
+    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
       <div className="max-w-2xl lg:max-w-5xl mx-auto py-8">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-gray-800 sm:text-4xl">
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-neutral-50 sm:text-4xl">
             Contact us
           </h1>
           <p className="mt-1 text-gray-600">
@@ -26,7 +27,7 @@ function page() {
 
         <div className="mt-12 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
           <div className="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8">
-            <h2 className="mb-8 text-xl font-semibold text-gray-800">
+            <h2 className="mb-8 text-xl font-semibold text-gray-800 dark:text-neutral-50">
               Fill in the form
             </h2>
 
@@ -109,7 +110,7 @@ function page() {
           <div className="divide-y divide-gray-200 ">
             <div className="flex gap-x-7 py-6">
               <svg
-                className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 "
+                className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 dark:text-neutral-50 "
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -125,7 +126,7 @@ function page() {
                 <path d="M12 17h.01" />
               </svg>
               <div className="grow">
-                <h3 className="font-semibold text-gray-800 ">Knowledgebase</h3>
+                <h3 className="font-semibold text-gray-800 dark:text-neutral-50 ">Knowledgebase</h3>
                 <p className="mt-1 text-sm text-gray-500">
                   We're here to help with any questions.
                 </p>
@@ -134,7 +135,7 @@ function page() {
 
             <div className="flex gap-x-7 py-6">
               <svg
-                className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800"
+                className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 dark:text-neutral-50"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -149,13 +150,13 @@ function page() {
                 <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
               </svg>
               <div className="grow">
-                <h3 className="font-semibold text-gray-800 ">FAQ</h3>
+                <h3 className="font-semibold text-gray-800 dark:text-neutral-50 ">FAQ</h3>
                 <p className="mt-1 text-sm text-gray-500">
                   Search our FAQ for answers to anything you might ask.
                 </p>
-                <a
-                  className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800"
-                  href="/"
+                <Link
+                  className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 dark:text-neutral-50"
+                  href="/faqs"
                 >
                   Visit FAQ
                   <svg
@@ -173,13 +174,13 @@ function page() {
                       fill="currentColor"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
             {/* <div className=" flex gap-x-7 py-6">
               <svg
-                className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800"
+                className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 dark:text-neutral-50"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -196,7 +197,7 @@ function page() {
               </svg>
               {/* <div className="grow">
                 <a href="https://gtahidiapi.developer.azure-api.net">
-                <h3 className="font-semibold text-gray-800 ">Developer APIs</h3>
+                <h3 className="font-semibold text-gray-800 dark:text-neutral-50 ">Developer APIs</h3>
                 </a>
                 <p className="mt-1 text-sm text-gray-500">
                   Check out our development quickstart guide.
@@ -206,7 +207,7 @@ function page() {
 
             <div className=" flex gap-x-7 py-6">
               <svg
-                className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 "
+                className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 dark:text-neutral-50 "
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -221,14 +222,14 @@ function page() {
                 <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
               </svg>
               <div className="grow">
-                <h3 className="font-semibold text-gray-800 ">
+                <h3 className="font-semibold text-gray-800 dark:text-neutral-50 ">
                   Contact us by email
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">
                   If you wish to write us an email instead please use
                 </p>
                 <a
-                  className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 "
+                  className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 dark:text-neutral-50 "
                   href="#"
                 >
                   Info@bricklabsai.com{" "}

@@ -10,10 +10,10 @@ import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white py-8 dark:bg-gray-900 text-black">
+    <footer className="py-8 dark:bg-neutral-900 text-black dark:text-white">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="grid grid-cols-12 gap-8">
-          <div className="mb-6 col-span-12 md:col-span-4 md:mb-0">
+          <div className="mb-6 col-span-12 md:col-span-3 md:mb-0">
             <a href="#" className="flex items-center">
               <Image
                 src={logo}
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
                 width={35}
                 height={35}
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-primary-light">
                 Therabot
               </span>
             </a>
@@ -44,27 +44,43 @@ const Footer: React.FC = () => {
             </a>
           </div>
 
-          <div className="col-span-12 md:col-span-4 p-2">
+          <div className="col-span-12 md:col-span-3 p-2">
             <h2 className="text-lg font-semibold text-gray-900 uppercase dark:text-white">
-              Useful Links
+              Features
             </h2>
             <br />
             <ul className="text-gray-500 dark:text-gray-400 flex flex-col gap-3 font-medium">
-              {/* <li className="">
-                <Link href="/pricing" className="hover:underline">
-                  Pricing
-                </Link>
-              </li> */}
-              <li className="">
-                <Link href="/" className="hover:underline">
-                  Home
-                </Link>
-              </li>
               <li className="">
                 <a href="https://shorturl.at/aFY78" className="hover:underline">
                   Whatsapp
                 </a>
               </li>
+              <li className="">
+                <Link href="/group-therapy" className="hover:underline">
+                  Group Therapy
+                </Link>
+              </li>
+
+              <li className="">
+                <Link href="/volunteer" className="hover:underline">
+                  Volunteering
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-span-12 md:col-span-3 p-2">
+            <h2 className="text-lg font-semibold text-gray-900 uppercase dark:text-white">
+              Product
+            </h2>
+            <br />
+            <ul className="text-gray-500 dark:text-gray-400 flex flex-col gap-3 font-medium">
+              <li className="">
+                <Link href="/" className="hover:underline">
+                  Home
+                </Link>
+              </li>
+              
               <li>
                 <Link href="/blog" className="hover:underline">
                   Blog
@@ -83,7 +99,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div className="col-span-12 md:col-span-4 p-2">
+          <div className="col-span-12 md:col-span-3 p-2">
             <h2 className="text-lg font-semibold text-gray-900 uppercase dark:text-white">
               Legal
             </h2>
