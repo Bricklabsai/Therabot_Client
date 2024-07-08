@@ -3,8 +3,9 @@ import { Raleway } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
 import { BASE_URL } from "@/global.config";
-import TelemetryProvider from "@/components/TelemetryProvider";
+//import TelemetryProvider from "@/components/TelemetryProvider";
 import { ThemeProvider } from "next-themes";
+import Script from "next/script";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -97,12 +98,6 @@ export default function RootLayout({
           name="twitter:image"
           content={`${BASE_URL}/assets/therabot.jpeg`}
         />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "my3o5ts432");`,
-          }}
-        ></script>
       </Head>
       <body className={`w-screen overflow-x-hidden bg-white dark:bg-tbdark`}>
         <ThemeProvider
@@ -110,9 +105,18 @@ export default function RootLayout({
           enableSystem={true}
           attribute="class"
         >
-          <TelemetryProvider />
+          {/* <TelemetryProvider /> */}
           {children}
         </ThemeProvider>
+        <Script id="clarity-script" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "my3o5ts432");
+          `}
+        </Script>
       </body>
     </html>
   );
