@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import logo from "@/public/therabot.svg";
 import Button from "./button";
-import useTelemetry from "@/hooks/useTelemetry";
+//import useTelemetry from "@/hooks/useTelemetry";
 import Link from "next/link";
 import ThemeSwitch from "./theme-switch";
 import { useTheme } from "next-themes";
@@ -184,7 +184,7 @@ function MobileMenu() {
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activated, setActivated] = useState(false);
-  const sendEvent = useTelemetry();
+ // const sendEvent = useTelemetry();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
