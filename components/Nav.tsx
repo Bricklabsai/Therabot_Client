@@ -14,7 +14,7 @@ import { MoonIcon, SunIcon, LaptopIcon } from "./icons";
 const LINKS = [
   { name: "Blog", to: "/blog" },
   { name: "About", to: "/about" },
-  { name: "FAQ", to: "/faq" },
+  { name: "FAQ", to: "/faqs" },
   { name: "Contact", to: "/contact" },
 ];
 
