@@ -38,6 +38,8 @@ export type PostSummary = {
         author: {
             data: Author
         }
+        featuredImage: any;
+        
     }
 }
 
@@ -71,5 +73,41 @@ export type Author = {
         updatedAt: string,
         publishedAt: string,
         image: object
+    }
+}
+
+export type Image = {
+    id: number,
+}
+
+const c = {
+    "data":
+    {
+        "id": 3,
+        "attributes":
+        {
+            "name": "20240703_171536.jpg",
+            "alternativeText": null,
+            "caption": null,
+            "width": 4080,
+            "height": 3060,
+            "formats":
+            {
+                "large": { "ext": ".jpg", "url": "/uploads/large_20240703_171536_093d4ac5d1.jpg", "hash": "large_20240703_171536_093d4ac5d1", "mime": "image/jpeg", "name": "large_20240703_171536.jpg", "path": null, "size": 136.57, "width": 1000, "height": 750, "sizeInBytes": 136575 },
+                "small": { "ext": ".jpg", "url": "/uploads/small_20240703_171536_093d4ac5d1.jpg", "hash": "small_20240703_171536_093d4ac5d1", "mime": "image/jpeg", "name": "small_20240703_171536.jpg", "path": null, "size": 32.82, "width": 500, "height": 375, "sizeInBytes": 32819 },
+                "medium": { "ext": ".jpg", "url": "/uploads/medium_20240703_171536_093d4ac5d1.jpg", "hash": "medium_20240703_171536_093d4ac5d1", "mime": "image/jpeg", "name": "medium_20240703_171536.jpg", "path": null, "size": 73.95, "width": 750, "height": 563, "sizeInBytes": 73947 },
+                "thumbnail": { "ext": ".jpg", "url": "/uploads/thumbnail_20240703_171536_093d4ac5d1.jpg", "hash": "thumbnail_20240703_171536_093d4ac5d1", "mime": "image/jpeg", "name": "thumbnail_20240703_171536.jpg", "path": null, "size": 6.25, "width": 208, "height": 156, "sizeInBytes": 6245 }
+            },
+            "hash": "20240703_171536_093d4ac5d1",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 2023.18,
+            "url": "/uploads/20240703_171536_093d4ac5d1.jpg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2024-07-08T17:48:01.902Z",
+            "updatedAt": "2024-07-08T17:51:52.500Z"
+        }
     }
 }
