@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { Suspense } from "react";
 import { Metadata } from "next";
 
 import First from "@/components/landing/first";
@@ -8,6 +8,7 @@ import HowItWorks from "@/components/landing/howitworks";
 import FAQ from "@/components/landing/faq";
 import ChatBanner from "@/components/landing/chatBanner";
 import Sponsors from "@/components/landing/sponsors";
+import PostsBanner from "@/components/posts-banner";
 
 export const metadata: Metadata = {
   title: "Therabot: Your Compassionate Digital Partner",
@@ -27,6 +28,9 @@ function page() {
       {/* <About /> */}
       <FAQ preview={true} />
       <Sponsors />
+      <Suspense>
+        <PostsBanner />
+      </Suspense>
       <ChatBanner />
     </div>
   );

@@ -66,11 +66,11 @@ export default function HowItWorks() {
           <div className="col-span-2"></div>
           <div className="relative px-2 border-s-2 border-primary-dark mx-auto col-span-12 md:col-span-8 text-left">
             <div className="ms-2 sm:ms-10">
-              <div className="absolute flex items-center z-10 justify-center w-2 h-2 top-0 rounded-full -start-[4.8px]  ring-blue-600 dark:ring-gray-900 dark:bg-blue-900">
+              <div className="absolute flex items-center z-10 justify-center w-2 h-2 top-0 rounded-full -start-[4.8px]  ring-blue-600 dark:ring-gray-900">
                 <div className="inline-block border-r-2 border-primary-dark border-b-2 w-2 h-2 rotate-[225deg]"></div>
               </div>
 
-              <div className="absolute flex items-center z-10 justify-center w-2 h-2 bottom-0 rounded-full -start-[4.8px]  ring-blue-600 dark:ring-gray-900 dark:bg-blue-900">
+              <div className="absolute flex items-center z-10 justify-center w-2 h-2 bottom-0 rounded-full -start-[4.8px]  ring-blue-600 dark:ring-gray-900">
                 <div className="inline-block border-r-2 border-primary-dark border-b-2 w-2 h-2 rotate-[45deg]"></div>
               </div>
 
@@ -79,17 +79,17 @@ export default function HowItWorks() {
                   <br />
                   <br />
                   <div className="grid grid-cols-12 items-center w-full">
-                    <span className="absolute flex items-center z-20 justify-center w-5 h-5 sm:w-7 sm:h-7 border-2 border-primary-dark bg-white rounded-full -start-[14px]  ring-blue-600 dark:ring-gray-900 dark:bg-blue-900"></span>
+                    <span className="absolute flex items-center z-20 justify-center w-5 h-5 sm:w-7 sm:h-7 border-2 border-primary-dark bg-white rounded-full -start-[14px]  ring-blue-600 dark:ring-gray-900 dark:bg-tbdark"></span>
                     <span
                       className={clsx(
-                        `absolute flex items-center z-[21] justify-center w-2 h-2 sm:w-4 sm:h-4 rounded-full -start-2  ring-blue-600 dark:ring-gray-900 dark:bg-blue-900`,
+                        `absolute flex items-center z-[21] justify-center w-2 h-2 sm:w-4 sm:h-4 rounded-full -start-2  ring-blue-600`,
                         working.bg
                       )}
                     ></span>
 
                     <span
                       className={clsx(
-                        `absolute flex items-center justify-center h-[1.5px] z-10 w-16 rounded-full start-0 end-0 dark:ring-gray-900 dark:bg-blue-900`,
+                        `absolute flex items-center justify-center h-[1.5px] z-10 w-16 rounded-full start-0 end-0 dark:ring-gray-900`,
                         working.bg
                       )}
                     ></span>
@@ -102,7 +102,7 @@ export default function HowItWorks() {
                             working.border
                           )}
                         >
-                          <div className="absolute top-0 left-0 h-full w-full z-10 bg-white rounded-br-full"></div>
+                          <div className="absolute top-0 left-0 h-full w-full z-10 bg-white dark:bg-tbdark rounded-br-full"></div>
                           <div
                             className={clsx(
                               `h-1/2  absolute bottom-0 left-0 w-full z-0`,
@@ -116,7 +116,7 @@ export default function HowItWorks() {
                             working.border
                           )}
                         >
-                          <div className="absolute top-0 left-0 h-full w-full z-10 bg-white rounded-tr-full"></div>
+                          <div className="absolute top-0 left-0 h-full w-full z-10 bg-white dark:bg-tbdark rounded-tr-full"></div>
                           <div
                             className={clsx(
                               `h-1/2 absolute top-0 left-0 w-full z-0`,

@@ -3,6 +3,7 @@ import { PostBody } from "@/components/post";
 import { getPost, getPosts } from "@/lib/blog/getPost";
 import markdownToHtml from "@/lib/markdowntohtml";
 import { notFound } from "next/navigation";
+import Image from 'next/image'
 
 const STRAPI_URL = process.env.STRAPI_URL;
 
@@ -25,7 +26,7 @@ export default async function Post({ params }: Params) {
   return (
     <div className=" py-28 sm:px-10 lg:px-20 lg:py-20 mx-auto">
       <div className="px-4 sm:px-20 md:px-36 leading-[1.5] mx-auto flex flex-col min-h-screen h-full justify-between">
-        <div className="blob w-full h-[510px] md:h-[650px] absolute top-0 left-0 -z-10 bg-opacity-60 bg-gradient-to-b from-primary-light to-white"></div>
+        <div className="blob w-full h-[510px] md:h-[650px] absolute top-0 left-0 -z-10 bg-opacity-60 bg-gradient-to-b from-primary-light dark:from-tbdark to-white dark:to-tbdark"></div>
         <br />
         <div className="flex flex-row gap-4">
           <p className="tag">
@@ -57,10 +58,12 @@ export default async function Post({ params }: Params) {
             <p>Written by</p>
             <div className="flex flex-row py-2 gap-4 items-center">
               <div className="h-10 w-10 rounded-full overflow-hidden border">
-                <img
-                  src={`${STRAPI_URL}/uploads/identicon_478d86f53a.png`}
-                  className="object-contain"
-                  alt="image of author"
+                <Image
+                  height={40}
+                  width={40}
+                  className="rounded-full"
+                  src="/placeholder.jpg"
+                  alt="Image Description"
                 />
               </div>
               <p className="font-semibold">
