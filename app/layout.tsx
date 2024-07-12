@@ -6,6 +6,7 @@ import { BASE_URL } from "@/global.config";
 //import TelemetryProvider from "@/components/TelemetryProvider";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
+import ReduxProvider from "@/components/redux-provider";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -106,7 +107,7 @@ export default function RootLayout({
           attribute="class"
         >
           {/* <TelemetryProvider /> */}
-          {children}
+          <ReduxProvider>{children}</ReduxProvider>
         </ThemeProvider>
         <Script id="clarity-script" strategy="afterInteractive">
           {`
