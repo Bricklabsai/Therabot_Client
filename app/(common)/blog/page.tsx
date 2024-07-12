@@ -43,15 +43,19 @@ async function page() {
 
 export default page;
 
-const getPosts = async (pageSize=undefined) => {
-  if (process.env.STRAPI_URL === null) {
-    Error("STRAPI_URL not defined.");
+const getPosts = async (pageSize = undefined) => {
+  if (process.env.NEXT_PUBLIC_STRAPI_URL === null) {
+    Error("NEXT_PUBLIC_STRAPI_URL not defined.");
     return null;
   }
   // <StrapiBase<PostSummary[]>>
   try {
     const res = await fetch(
-      `${process.env.STRAPI_URL}/api/posts?fields[0]=title&fields[1]=excerpt&fields[2]=slug&fields[3]=updatedAt${pageSize ? '&pagination[pageSize]=' + pageSize : ''}&sort[0]=createdAt:desc&populate=*`,
+      `${
+        process.env.NEXT_PUBLIC_STRAPI_URL
+      }/api/posts?fields[0]=title&fields[1]=excerpt&fields[2]=slug&fields[3]=updatedAt${
+        pageSize ? "&pagination[pageSize]=" + pageSize : ""
+      }&sort[0]=createdAt:desc&populate=*`,
       {
         method: "GET",
         cache: "no-store",

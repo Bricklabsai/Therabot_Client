@@ -3,9 +3,9 @@ import { PostBody } from "@/components/post";
 import { getPost, getPosts } from "@/lib/blog/getPost";
 import markdownToHtml from "@/lib/markdowntohtml";
 import { notFound } from "next/navigation";
-import Image from 'next/image'
+import Image from "next/image";
 
-const STRAPI_URL = process.env.STRAPI_URL;
+const NEXT_PUBLIC_STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
 type Params = {
   params: {

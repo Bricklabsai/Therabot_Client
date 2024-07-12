@@ -11,7 +11,7 @@ export default function ProductDescription({ content }: { content: string }) {
   };
   return (
     <>
-      <div className="p-4 bg-white border rounded-md border-sky-300">
+      <div className="p-4 border rounded-md border-neutral-200 dark:border-neutral-700">
         <div className="py-1">
           <p className="font-bold text-lg text-sky-800 uppercase">
             Product Description

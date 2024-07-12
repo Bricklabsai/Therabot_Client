@@ -38,7 +38,7 @@ export default function ArticleCard({
             }
             className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform group-hover:scale-110"
             src={
-              process.env.STRAPI_URL +
+              process.env.NEXT_PUBLIC_STRAPI_URL +
               post.attributes.featuredImage.data.attributes.formats.small.url
             }
             alt="Image Description"

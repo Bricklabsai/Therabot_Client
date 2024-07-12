@@ -20,7 +20,7 @@ export default function ProductTitle({
   product: any;
   name: string;
   price: number;
-  id: string;
+  id: number;
 }) {
   const dispatch = useDispatch();
 
@@ -71,7 +71,12 @@ export default function ProductTitle({
         </p>
       </div> */}
       <div className="flex font-bold text-primary text-2xl">
-        <p>${price}</p>
+        <p>
+        {new Intl.NumberFormat("en-US", {
+                      style: "currency",
+                      currency: "KES",
+                    }).format(price)}
+        </p>
       </div>
 
       {itemInCart.length > 0 ? (
@@ -79,7 +84,7 @@ export default function ProductTitle({
           <div className="flex w-fit items-center gap-8 rounded-md py-1 px-3 bg-sky-100">
             <button
               onClick={() => onDecreaseQuantity(product.id)}
-              className="font-bold text-2xl text-primary"
+              className="font-bold text-2xl text-primary-dark"
             >
               -
             </button>
@@ -88,7 +93,7 @@ export default function ProductTitle({
             </span>
             <button
               onClick={() => onIncreaseQuantity(product.id)}
-              className="font-bold text-2xl text-primary"
+              className="font-bold text-2xl text-primary-dark"
             >
               +
             </button>
@@ -99,7 +104,7 @@ export default function ProductTitle({
           <div className="flex flex-row gap-4">
             <button
               onClick={() => onAddToCart(product)}
-              className="outline-none w-full rounded-md font-semibold text-xl px-4 py-2 bg-primary text-white"
+              className="outline-none w-full rounded-md font-semibold text-xl px-4 py-2 bg-primary-dark text-white"
             >
               Add to Cart
             </button>

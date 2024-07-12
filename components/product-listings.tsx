@@ -24,7 +24,14 @@ export default async function ProductListings() {
                 className="flex flex-col gap-2 p-4 rounded-lg shadow-md"
               >
                 <div className="h-44 flex justify-center">
-                  <img className="object-contain" src={process.env.STRAPI_URL + product.attributes.images.data[0].attributes.url} alt="" />
+                  <img
+                    className="object-contain"
+                    src={
+                      process.env.NEXT_PUBLIC_STRAPI_URL +
+                      product.attributes.images.data[0].attributes.url
+                    }
+                    alt=""
+                  />
                 </div>
                 <hr className="h-[2px] w-full bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
                 <div>
@@ -47,13 +54,13 @@ export default async function ProductListings() {
 }
 
 async function getProducts() {
-  if (process.env.STRAPI_URL === null) {
-    Error("STRAPI_URL not defined.");
+  if (process.env.NEXT_PUBLIC_STRAPI_URL === null) {
+    Error("NEXT_PUBLIC_STRAPI_URL not defined.");
     return null;
   }
   try {
     const res = await fetch(
-      `${process.env.STRAPI_URL}/api/products?fields[1]=name&fields[3]=updatedAt&populate=*&fields[2]=sizes&fields[4]=price&fields[5]=slug`,
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/products?fields[1]=name&fields[3]=updatedAt&populate=*&fields[2]=sizes&fields[4]=price&fields[5]=slug`,
       {
         method: "GET",
         cache: "no-store",
