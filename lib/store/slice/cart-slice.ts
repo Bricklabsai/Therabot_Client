@@ -5,14 +5,14 @@ export interface CartState {
 }
 
 interface IncreaseQuantityPayload {
-    id: string;
+    id: number;
 }
 
 interface DecreaseQuantityPayload {
-    id: string;
+    id: number;
 }
 interface RemoveItemPayload {
-    id: string;
+    id: number;
 }
 
 const cartSlice = createSlice({
@@ -52,10 +52,13 @@ const cartSlice = createSlice({
         removeItem: (state, action: PayloadAction<RemoveItemPayload>) => {
             state.cart = state.cart.filter((item) => item.id !== action.payload.id);
         },
+        clear: (state, action: PayloadAction<RemoveItemPayload>) => {
+            state.cart = []
+        }
     },
 });
 
-export const { addToCart, increaseQuantity, decreaseQuantity, removeItem } =
+export const { addToCart, increaseQuantity, decreaseQuantity, removeItem, clear } =
     cartSlice.actions;
 export const cartReducer = cartSlice.reducer;
 

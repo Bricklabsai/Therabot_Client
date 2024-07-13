@@ -10,6 +10,7 @@ import ThemeSwitch from "./theme-switch";
 import { useTheme } from "next-themes";
 import clsx from "clsx";
 import { MoonIcon, SunIcon, LaptopIcon } from "./icons";
+import Cart from "./cart";
 
 const LINKS = [
   { name: "Blog", to: "/blog" },
@@ -185,7 +186,7 @@ function MobileMenu() {
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activated, setActivated] = useState(false);
- // const sendEvent = useTelemetry();
+  // const sendEvent = useTelemetry();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -267,9 +268,13 @@ export const Nav = () => {
           </div>
 
           <div className="flex items-center justify-center">
+            <div className="flex h-full px-6 justify-center items-center">
+              <Cart />
+            </div>
             <div className="block lg:hidden">
               <MobileMenu />
             </div>
+
             <div className="noscript-hidden hidden lg:block">
               <DarkModeToggle />
             </div>

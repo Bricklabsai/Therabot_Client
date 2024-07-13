@@ -46,7 +46,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               )}
 
               <ProductTitle
-                product={product}
+                product={product.data}
                 name={product.data?.attributes.name as string}
                 price={product.data?.attributes.price as number}
                 id={product.data?.id as number}

@@ -7,9 +7,11 @@ import {
   increaseQuantity,
   decreaseQuantity,
   removeItem,
+  clear,
 } from "@/lib/store/slice/cart-slice";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store/store";
+import { Product } from "@/lib/product";
 
 export default function ProductTitle({
   product,
@@ -24,38 +26,46 @@ export default function ProductTitle({
 }) {
   const dispatch = useDispatch();
 
-  const onAddToCart = (product: any) => {
+  const onAddToCart = (product: Product) => {
+    console.log(product);
     let productData = {
       id: product.id,
-      name: product.name,
-      slug: product.slug,
-      price: product.price,
-      image: product.images[0].url,
-      inventory: product.inventory.quantity,
-      categoryName: product.category.name,
-      categorySlug: product.category.slug,
+      name: product.attributes.name,
+      slug: product.attributes.slug,
+      price: product.attributes.price,
+      image: product.attributes.images.data[0].attributes.formats.thumbnail.url,
     };
+
     dispatch(addToCart(productData));
   };
 
-  const cartItems = useSelector((state: RootState) =>
-    state.cart.filter((p: any) => p.id == id)
-  );
+  const cartItems = useSelector((state: RootState) => {
+    console.log(JSON.parse(JSON.stringify(state.cart)));
+    return state.cart.filter((p: any) => {
+      console.log(p);
+      console.log(p.id, id);
+      return p.id == id;
+    });
+  });
 
   const itemInCart = useSelector((state: RootState) =>
     state.cart.filter((p: any) => p.id == id)
   );
 
-  const onIncreaseQuantity = (productId: string) => {
+  const onIncreaseQuantity = (productId: number) => {
     dispatch(increaseQuantity({ id: productId }));
   };
 
-  const onDecreaseQuantity = (productId: string) => {
+  const onDecreaseQuantity = (productId: number) => {
     if (cartItems[0].quantity == 1) {
       dispatch(removeItem({ id: productId }));
     } else {
       dispatch(decreaseQuantity({ id: productId }));
     }
+  };
+
+  const clearState = () => {
+    dispatch(clear({ id: product }));
   };
 
   return (
@@ -72,10 +82,10 @@ export default function ProductTitle({
       </div> */}
       <div className="flex font-bold text-primary text-2xl">
         <p>
-        {new Intl.NumberFormat("en-US", {
-                      style: "currency",
-                      currency: "KES",
-                    }).format(price)}
+          {new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "KES",
+          }).format(price)}
         </p>
       </div>
 
