@@ -16,7 +16,7 @@ import { usePathname } from "next/navigation";
 const LINKS = [
   { name: "Blog", to: "/blog" },
   { name: "About", to: "/about" },
-  { name: "Shop", to: "/shop" },
+  //{ name: "Shop", to: "/shop" },
   { name: "FAQ", to: "/faqs" },
   { name: "Contact", to: "/contact" },
 ];
@@ -196,7 +196,7 @@ export const Nav = () => {
       setShowCart(true);
     }
     setShowCart(false);
-  }, [showCart]);
+  }, [path]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
