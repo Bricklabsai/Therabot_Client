@@ -194,6 +194,7 @@ export const Nav = () => {
   useEffect(() => {
     if (path == "/shop" || path == "/cart" || path == "/checkout") {
       setShowCart(true);
+      return
     }
     setShowCart(false);
   }, [path]);
