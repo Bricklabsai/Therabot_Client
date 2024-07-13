@@ -11,6 +11,7 @@ import { useTheme } from "next-themes";
 import clsx from "clsx";
 import { MoonIcon, SunIcon, LaptopIcon } from "./icons";
 import Cart from "./cart";
+import { usePathname } from "next/navigation";
 
 const LINKS = [
   { name: "Blog", to: "/blog" },
@@ -186,7 +187,16 @@ function MobileMenu() {
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activated, setActivated] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   // const sendEvent = useTelemetry();
+  const path = usePathname();
+
+  useEffect(() => {
+    if (path == "/shop" || path == "/cart" || path == "/checkout") {
+      setShowCart(true);
+    }
+    setShowCart(false);
+  }, [showCart]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -268,9 +278,11 @@ export const Nav = () => {
           </div>
 
           <div className="flex items-center justify-center">
-            <div className="flex h-full px-6 justify-center items-center">
-              <Cart />
-            </div>
+            {showCart && (
+              <div className="flex h-full px-6 justify-center items-center">
+                <Cart />
+              </div>
+            )}
             <div className="block lg:hidden">
               <MobileMenu />
             </div>
