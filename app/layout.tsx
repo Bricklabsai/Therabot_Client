@@ -6,6 +6,8 @@ import { BASE_URL } from "@/global.config";
 //import TelemetryProvider from "@/components/TelemetryProvider";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
+import ReduxProvider from "@/components/redux-provider";
+import { SessionProvider } from "next-auth/react";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -106,7 +108,9 @@ export default function RootLayout({
           attribute="class"
         >
           {/* <TelemetryProvider /> */}
-          {children}
+          <ReduxProvider>
+            <SessionProvider>{children}</SessionProvider>
+          </ReduxProvider>
         </ThemeProvider>
         <Script id="clarity-script" strategy="afterInteractive">
           {`

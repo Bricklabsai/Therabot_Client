@@ -1,6 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Metadata } from "next";
 import Link from "next/link";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Suspense } from "react";
+import ProductListings from "@/components/product-listings";
 
 type Product = {
   id: string;
@@ -48,41 +51,30 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <div className=" py-28 sm:px-10 bg-white lg:px-20 lg:py-20 mx-auto">
+      <div className=" py-28 sm:px-10  lg:px-20 lg:py-20 mx-auto">
         <div className="mx-auto mb-10 lg:mb-14">
-          <h2 className="text-2xl font-bold md:text-4xl text-black md:leading-tight ">
+          <h2 className="text-2xl font-bold md:text-4xl  md:leading-tight ">
             Shop
           </h2>
-          <br/>
+          <br />
           <div className="py-3">
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-9 lg:grid-cols-4">
-              {PRODUCTS.map((product: Product) => (
-                <Link
-                  href={`/shop/${product.slug}`}
-                  key={product.id}
-                  className="flex flex-col gap-2 border p-4 rounded-lg shadow-md"
+              <>
+                <Suspense
+                  fallback={
+                    <>
+                      {[1, 2, 3, 4].map((_, index) => (
+                        <Skeleton
+                          key={index}
+                          className="flex h-[290px] bg-neutral-100 dark:bg-neutral-800 flex-col gap-2 p-4 rounded-lg"
+                        ></Skeleton>
+                      ))}
+                    </>
+                  }
                 >
-                  <div className="h-44 flex justify-center">
-                    <img
-                      className="object-contain"
-                      src={product.image}
-                      alt=""
-                    />
-                  </div>
-                  <hr className="h-[2px] w-full bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
-                  <div>
-                    <h3>{product.name}</h3>
-                  </div>
-                  <div>
-                    <p>
-                      {new Intl.NumberFormat("en-US", {
-                        style: "currency",
-                        currency: "KES",
-                      }).format(product.price)}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+                  <ProductListings />
+                </Suspense>
+              </>
             </div>
           </div>
         </div>
