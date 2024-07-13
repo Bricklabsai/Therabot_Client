@@ -8,19 +8,6 @@ import { getProduct } from "@/lib/product/getProduct";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const product = await getProduct(params.slug);
-  /*
-  {
-    id: "edjajja",
-    name: "T-shirt",
-    slug: "t-shirt",
-    description: "This is a descrition of a piece of T-shirt",
-    price: 700,
-    images: ["/t-shirt.jpg"],
-    inventory: 8,
-    categoryName: "wear",
-    categorySlug: "wear",
-  };*/
-  //await (await axios.get(`/products/${params.slug}`)).data;
 
   if (!product) {
     return notFound();
