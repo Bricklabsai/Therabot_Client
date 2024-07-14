@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import React, { SetStateAction, Dispatch } from "react";
 import { ShippingAddress } from "./checkout-page";
-import { useSession } from "next-auth/react";
+//import { useSession } from "next-auth/react";
 import { useState } from "react";
 
 export default function ShippingAddressDialog({
@@ -27,7 +27,6 @@ export default function ShippingAddressDialog({
   address: ShippingAddress | undefined;
   setAddress: Dispatch<SetStateAction<ShippingAddress | undefined>>;
 }) {
-  const session = useSession();
 
   const [formData, setFormData] = useState<ShippingAddress | undefined>(
     address
@@ -60,8 +59,9 @@ export default function ShippingAddressDialog({
                   id="fullName"
                   onChange={handleChange}
                   defaultValue={
-                    (address && address.fullName) ||
-                    (session.data?.user?.name as string)
+                    (address && address.fullName) 
+                    //||
+                    //(session.data?.user?.name as string)
                   }
                   className="col-span-3"
                 />
