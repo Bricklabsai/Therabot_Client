@@ -7,6 +7,7 @@ import { BASE_URL } from "@/global.config";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
 import ReduxProvider from "@/components/redux-provider";
+import { Toaster } from "@/components/ui/toaster"
 //import { SessionProvider } from "next-auth/react";
 
 const raleway = Raleway({ subsets: ["latin"] });
@@ -112,6 +113,8 @@ export default function RootLayout({
             {children}
           </ReduxProvider>
         </ThemeProvider>
+        <Toaster />
+
         <Script id="clarity-script" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
@@ -121,6 +124,7 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "my3o5ts432");
           `}
         </Script>
+        
       </body>
     </html>
   );
