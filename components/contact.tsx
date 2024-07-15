@@ -13,7 +13,7 @@ export type FormData = {
 };
 
 export default function Contact() {
-  const { register, handleSubmit } = useForm<FormData>();
+  const { register, handleSubmit, reset } = useForm<FormData>();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -32,11 +32,13 @@ export default function Contact() {
         description: "An Error has occured, please try again later.",
         variant: "destructive",
       });
+      reset({lastName: "", firstName: "", email: "", message: ""})
     } else {
       toast({
         title: "Message submitted",
         description: "We will be in touch in 1-2 business days.",
       });
+      reset({lastName: "", firstName: "", email: "", message: ""})
     }
 
   }
