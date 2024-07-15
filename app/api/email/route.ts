@@ -3,11 +3,8 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-console.log(process.env.MY_EMAIL,"=>", process.env.MY_PASSWORD)
 
-  //const { email, firstName, lastName, message } = await request.json();
   const data = await request.json();
-  console.log("DATA => ", data)
 
 
   const transport = nodemailer.createTransport({
@@ -39,9 +36,9 @@ console.log(process.env.MY_EMAIL,"=>", process.env.MY_PASSWORD)
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Email sent' });
+    return NextResponse.json({ message: 'Email sent', success: true });
   } catch (err) {
-    return NextResponse.json({ error: err }, { status: 500 });
+    return NextResponse.json({ message: err, success: false }, { status: 500 });
   }
 }
 
