@@ -37,6 +37,7 @@ export const getPost = async (slug: string) => {
                     { 'Authorization': `bearer ${STRAPI_AUTH_TOKEN}` }
             }
         )
+     //   console.log(res.data)
         return res.data
     }
     catch (error: any) {

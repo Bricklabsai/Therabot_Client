@@ -53,7 +53,7 @@ export type Post = {
         createdAt: string,
         updatedAt: string,
         publishedAt: string,
-        content: string,
+        content: any,
         featuredImage: object,
         category: {
             data: Category,
