@@ -8,6 +8,7 @@ import ShippingAddressDialog from "./shipping-address";
 import { useState } from "react";
 
 export type ShippingAddress = {
+  email: string;
   fullName: string;
   phoneNumber: string;
   streetName: string;
@@ -17,7 +18,6 @@ export type ShippingAddress = {
 };
 
 const NEXT_PUBLIC_STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
-
 
 type shippingMethod = {
   name: "FREE" | "STANDARD" | "EXPRESS";
@@ -52,7 +52,7 @@ export default function CheckoutPage() {
 
   const { subtotal, totalQuantity } = getTotal(cartItems);
   const totalTax = 0.16 * subtotal;
-  const totalAmount = subtotal // + totalTax;
+  const totalAmount = subtotal; // + totalTax;
   const shipping = method == "1" ? 200 : method == "2" ? 300 : 400;
 
   const grandTotal = totalAmount + shipping;
@@ -63,7 +63,7 @@ export default function CheckoutPage() {
         <div className="p-4 border border-gray-200 dark:border-neutral-700 rounded-md">
           <div className="flex flex-col gap-2">
             <h3 className="font-semibold text-lg text-neutral-700 dark:text-neutral-100">
-              Shipping address
+              Buyer Information and Shipping
             </h3>
             <ShippingAddressDialog address={address} setAddress={setAddress}>
               <div className="flex justify-between p-4 rounded-md  items-center bg-neutral-200 dark:bg-neutral-800">
@@ -104,7 +104,9 @@ export default function CheckoutPage() {
                   >
                     <div
                       className={`h-3 w-3 rounded-full ${
-                        method == "1" ? "bg-primary-light" : "border-transparent"
+                        method == "1"
+                          ? "bg-primary-light"
+                          : "border-transparent"
                       }`}
                     ></div>
                   </div>
@@ -138,7 +140,9 @@ export default function CheckoutPage() {
                   >
                     <div
                       className={`h-3 w-3 rounded-full ${
-                        method == "2" ? "bg-primary-light" : "border-transparent"
+                        method == "2"
+                          ? "bg-primary-light"
+                          : "border-transparent"
                       }`}
                     ></div>
                   </div>
@@ -172,7 +176,9 @@ export default function CheckoutPage() {
                   >
                     <div
                       className={`h-3 w-3 rounded-full ${
-                        method == "3" ? "bg-primary-light" : "border-transparent"
+                        method == "3"
+                          ? "bg-primary-light"
+                          : "border-transparent"
                       }`}
                     ></div>
                   </div>
@@ -211,7 +217,11 @@ export default function CheckoutPage() {
               className="grid grid-cols-12 gap-3 p-2 w-full border-b border-gray-300 last:border-b-0"
             >
               <div className="col-span-5 h-24 w-24 flex justify-center">
-                <img className="object-contain h-full" src={NEXT_PUBLIC_STRAPI_URL + d.image} alt="" />
+                <img
+                  className="object-contain h-full"
+                  src={NEXT_PUBLIC_STRAPI_URL + d.image}
+                  alt=""
+                />
               </div>
               <div className="col-span-7 flex flex-1 p-1 text-sm font-normal flex-col justify-between">
                 <div>
@@ -290,7 +300,12 @@ export default function CheckoutPage() {
           </div>
 
           <div className="py-4">
-            <Checkout amount={grandTotal} />
+            <Checkout
+              email={address?.email as string}
+              first_name={address?.fullName.trim().split(" ")[0] as string}
+              last_name={address?.fullName.trim().split(" ").slice(1).join(" ") as string}
+              amount={grandTotal}
+            />
           </div>
         </div>
       </div>

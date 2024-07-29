@@ -27,7 +27,6 @@ export default function ShippingAddressDialog({
   address: ShippingAddress | undefined;
   setAddress: Dispatch<SetStateAction<ShippingAddress | undefined>>;
 }) {
-
   const [formData, setFormData] = useState<ShippingAddress | undefined>(
     address
   );
@@ -52,6 +51,21 @@ export default function ShippingAddressDialog({
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="email" className="text-right">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  onChange={handleChange}
+                  defaultValue={
+                    address && address.email
+                    //||
+                    //(session.data?.user?.name as string)
+                  }
+                  className="col-span-3"
+                />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="name" className="text-right">
                   Name
                 </Label>
@@ -59,7 +73,7 @@ export default function ShippingAddressDialog({
                   id="fullName"
                   onChange={handleChange}
                   defaultValue={
-                    (address && address.fullName) 
+                    address && address.fullName
                     //||
                     //(session.data?.user?.name as string)
                   }

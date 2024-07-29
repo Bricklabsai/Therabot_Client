@@ -192,7 +192,7 @@ export const Nav = () => {
   const path = usePathname();
 
   useEffect(() => {
-    if (path == "/shop" || path == "/cart" || path == "/checkout") {
+    if (path.startsWith("/shop") || path.startsWith("/cart") || path.startsWith("/checkout")) {
       setShowCart(true);
       return
     }

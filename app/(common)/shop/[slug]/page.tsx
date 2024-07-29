@@ -6,6 +6,7 @@ import ProductTitle from "@/components/product";
 import ProductDescription from "@/components/product-description";
 import { getProduct } from "@/lib/product/getProduct";
 
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const product = await getProduct(params.slug);
 
