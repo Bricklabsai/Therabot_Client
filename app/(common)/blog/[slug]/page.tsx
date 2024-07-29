@@ -50,7 +50,9 @@ export default async function Post({ params }: Params) {
     return notFound();
   }
 
-  const content = await markdownToHtml(post.data?.attributes.content || "");
+  //const content = await markdownToHtml(post.data?.attributes.content || "");
+  const content = post.data?.attributes.content || "";
+ // console.log("content => ", content)
 
   return (
     <div className=" py-28 sm:px-10 lg:px-20 lg:py-20 mx-auto">
