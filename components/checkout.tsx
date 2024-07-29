@@ -5,11 +5,20 @@ import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store/store";
 
-export default function Checkout({email, first_name, last_name, amount }: { email: string, first_name: string, last_name: string,amount: number }) {
- // const session = useSession();
- const cartItems = useSelector((state: RootState) => state.cart);
+export default function Checkout({
+  email,
+  first_name,
+  last_name,
+  amount,
+}: {
+  email: string;
+  first_name: string;
+  last_name: string;
+  amount: number;
+}) {
+  // const session = useSession();
+  const cartItems = useSelector((state: RootState) => state.cart);
 
- 
   const router = useRouter();
 
   function proceedToPay() {
@@ -23,9 +32,7 @@ export default function Checkout({email, first_name, last_name, amount }: { emai
     })
       .then((res) => {
         router.push(res.data.url);
-        console.log(cartItems)
-        
-        alert("don")
+        console.log(cartItems);
       })
       .catch((error) => {
         console.log(error);
