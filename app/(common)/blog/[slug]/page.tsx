@@ -4,8 +4,37 @@ import { getPost, getPosts } from "@/lib/blog/getPost";
 import markdownToHtml from "@/lib/markdowntohtml";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import type { Metadata, ResolvingMetadata } from "next";
 
 const NEXT_PUBLIC_STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
+
+export async function generateMetadata(
+  {
+    params
+  }: Params,
+  parent: ResolvingMetadata
+): Promise<Metadata | undefined> {
+  let content = await getPost(params.slug);
+  if (!content) {
+    return;
+  }
+  return {
+    title: content.data?.attributes.title,
+    description: content.data?.attributes.excerpt,
+    openGraph: {
+      images: [{ url: `https:://trytherabot.com/og?title=${content.data?.attributes.title}` }],
+      title: content.data?.attributes.title,
+      description: content.data?.attributes.excerpt,
+      url: `https://trytherabot.com/blog/${content.data?.attributes.slug}`,
+      siteName: "Therabot",
+    },
+    twitter: {
+      title: content.data?.attributes.title,
+      description: content.data?.attributes.title,
+      images: [`https:://trytherabot.com/og?title=${content.data?.attributes.title}`],
+    },
+  };
+}
 
 type Params = {
   params: {
