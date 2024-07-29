@@ -29,7 +29,7 @@ export default function ArticleCard({
         className="h-64 rounded-lg overflow-hidden"
       >
         {post.attributes.featuredImage.data != null ? (
-          <img
+          <Image
             height={
               post.attributes.featuredImage.data.attributes.formats.small.height
             }
@@ -44,7 +44,13 @@ export default function ArticleCard({
             alt="Image Description"
           />
         ) : (
-          <></>
+          <Image
+            height={924}
+            width={1640}
+            className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform group-hover:scale-110"
+            src={`/og?title=${post.attributes.title}`}
+            alt="Image Description"
+          />
         )}
       </Link>
       <br />
